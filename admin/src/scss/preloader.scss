@@ -1,0 +1,30 @@
+@import "_/variables";
+@import "_/colors";
+@import "_/spinners";
+
+.#{$namespace}-preloader {
+  ##{$namespace}-app {
+    height: 100%;
+    .#{$namespace}-admin-wrap {
+      position: relative;
+      height: 100%;
+    }
+  }
+}
+
+.#{$namespace}-spinner {
+  @include spinner(50);
+}
+
+.#{$namespace}-content {
+  transition: opacity 0.3s ease;
+  &.#{$namespace}-content-idle {
+    opacity: 0;
+  }
+}
+
+@keyframes esg-preloader {
+  to { 
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

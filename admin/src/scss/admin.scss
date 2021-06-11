@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400');
+@import 'normalize.css';
+@import 'save-data';
+@import "_/variables";
+@import "_/elements";
+@import "_/breakpoints";
+@import "_/spinners";
+@import "_/buttons";
+@import "_/menus";
+@import "_/colors";
+@import "_/fonts";
+
+.#{$namespace}-admin-wrap {
+  position: relative;
+}
+
+.#{$namespace}-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 0;
+  background: $white;
+  margin: 0 0 20px;
+  h2 {
+    font-size: 16px;
+  }
+  .#{$namespace}-wplogo {
+    width: 80px;
+    height: 80px;
+    margin: 0 25px 0 0;
+    line-height: 0;
+    background: $red;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    svg {
+      fill: $white;
+      width: 40px;
+      height: 40px;
+    }
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  .#{$namespace}-github {
+    display: inline-block;
+    width: 50px;
+    height: 41px;
+    background-size: contain;
+    margin-left: 10px;
+  }
+}
+
+##{$namespace}-app {
+  font-family: $opensans;
+  
+  .#{$namespace}-header {
+    font-size: 16px;
+    button {
+      margin-left: auto;
+    }
+    a {
+      line-height: 0;
+    }
+  }
+}
+
+.#{$namespace}-content {
+  position: relative;
+  padding: 30px;
+  @include smartphone {
+    padding: 0;
+  }
+}
+
+.#{$namespace}-update-notice {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999999;
+  background: $dark-gray;
+  color: $white;
+  padding: 15px 20px;
+  transform: translate(0, calc(-100% - 20px));
+  transition: transform 0.25s ease-in;
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    line-height: 0;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  &-show {
+    transition-timing-function: ease-out;
+    transform: translate(0, 0);
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.#{$namespace}-basic-spinner {
+  @include basic-spinner;
+}
+
+@keyframes esg-spin {
+  100% {transform: rotate(360deg)}
+}

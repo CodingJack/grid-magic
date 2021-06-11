@@ -1,0 +1,23 @@
+// _loaders.scss
+
+@import "variables";
+@import "colors";
+@import "spinners";
+
+.#{$namespace} {
+  &-lazyload-placeholder {
+    position: relative;
+    background: $white;
+    min-height: 100px;
+    height: 100%;
+    &:after {
+      @include spinner;
+      content: "";
+    }
+  }
+  &-content > .#{$namespace}-lazyload-placeholder {
+    background: transparent;
+    height: 200px;
+  }
+}
+

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders correctly 1`] = `
+<input
+  aria-labelledby="Some Label"
+  className="esg-v4-input-text"
+  onChange={[Function]}
+  placeholder=""
+  readOnly={false}
+  tabIndex="0"
+  type="text"
+  value="Some Value"
+/>
+`;
+
+exports[`it renders correctly 2`] = `
+<input
+  aria-labelledby="Some Label"
+  ariaLabel="Another Label"
+  className="esg-v4-input-text"
+  extraClass="my-extra-class"
+  namespace="name-space"
+  onChange={[Function]}
+  placeholder="some placeholder"
+  readOnly={false}
+  readonly={true}
+  tabIndex="0"
+  type="text"
+  value="Another Value"
+/>
+`;
+
+exports[`it unmounts should match the snapshot 1`] = `"<input type=\\"text\\" class=\\"esg-v4-input-text\\" value=\\"Some Value\\" placeholder=\\"\\" tabindex=\\"0\\" aria-labelledby=\\"Some Label\\"/>"`;

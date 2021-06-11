@@ -1,0 +1,30 @@
+{
+  "grid_list": {
+    "title": "All Essential Grids"
+  },
+  "how_to_use": {
+    "title": "How to Use Essential Grid",
+    "txt1": "From the",
+    "txt2": "page and/or post editor",
+    "txt3": "insert the Essential Grid block or insert the shortcode from the grid table above.",
+    "txt4": "widgets panel",
+    "txt5": "drag the Essential Grid widget to the desired sidebar or other widget area."
+  },
+  "version_info": {
+    "title": "Version Information",
+    "installed": "Installed Version",
+    "available": "Available Version",
+    "check_version": "Check Version"
+  },
+  "newsletter": "Newsletter",
+  "update_history": "Update History",
+  "notices": {
+    "saving_data": "Saving Data...",
+    "admin_page_does_not_exist": "Admin page does not exist",
+    "unable_to_duplicate_grid": "Unable to Duplicate Grid",
+    "sure_you_want_to_delete_grid": "Are you sure you want to delete this Grid?",
+    "sure_you_want_to_delete_these_grids": "Are you sure you want to delete these Grids?",
+    "unable_to_delete_grid": "Unable to delete Grid",
+    "unable_to_save_favorite": "Unable to save favorite"
+  }
+}

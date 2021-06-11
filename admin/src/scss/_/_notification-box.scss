@@ -1,0 +1,33 @@
+// _notification-box.scss
+
+@import "variables";
+@import "colors";
+
+.#{$namespace}-notification-box {
+  margin-top: 50px;
+}
+.#{$namespace}-info-box {
+  display: flex;
+  transition: 0.3s opacity ease-out;
+  align-itenms: stretch;
+  .#{$namespace}-icon-box {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-basis: 55px;
+    color: $white;
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-top: 24px;
+    }
+  }
+  .#{$namespace}-info-content {
+    background-color: $white;
+    padding: 30px;
+    flex-basis: calc(100% - 55px);
+  }
+  &-unmounted {
+    opacity: 0;
+  }
+}

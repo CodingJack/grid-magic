@@ -1,0 +1,57 @@
+// _dropdown.scss
+
+@import "variables";
+@import "colors";
+@import "breakpoints";
+
+.#{$namespace}-dropdown {
+  position: relative;
+  &-itm,
+  &-header {
+    color: $black;
+    font-weight: 600;
+    border-bottom: 1px solid $light-gray;
+    cursor: default;
+    > * {
+      pointer-events: none;
+    }
+  }
+  &-itm {
+    font-size: 12px;
+    padding: 0 10px 0 20px;
+    min-height: 37px;
+    overflow: hidden;
+    &:hover,
+    &-selected {
+      color: $white;
+      background: $purple;
+    }
+  }
+  &-header {
+    position: relative;
+    font-size: 16px;
+    padding: 10px 15px;
+    background: $white;
+    justify-content: space-between;
+    span {
+      > svg {
+        margin-right: 20px;
+      }
+    }
+    > svg {
+      margin-right: 5px;
+    }
+  }
+}
+
+##{$namespace}-app {
+  .#{$namespace}-dropdown {
+    &-container {
+      width: 100%;
+      list-style-type: none;
+      padding-left: 0;
+      background: $light-gray;
+      z-index: 99;
+    }
+  }
+}

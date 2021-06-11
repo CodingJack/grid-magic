@@ -1,0 +1,5 @@
+// _transitions.scss
+
+@mixin hover_transition_text {
+  transition: color 0.2s ease;
+}

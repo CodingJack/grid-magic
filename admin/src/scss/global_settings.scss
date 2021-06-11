@@ -1,0 +1,7 @@
+@import "_/variables";
+
+.#{$namespace} {
+  &-globals {
+    margin-top: 50px;
+  }
+}

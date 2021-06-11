@@ -1,0 +1,48 @@
+// _menus.scss
+
+@import "variables";
+@import "colors";
+
+.#{$namespace}-menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  background: $white;
+  
+  button.#{$namespace}-menu-tab {
+    display: flex;
+    color: $black;
+    height: 100%;
+    padding: 0 20px;
+    border-radius: 0;
+    font-weight: 400;
+    margin-right: 0;
+    align-items: center;
+    justify-content: center;
+    &-selected {
+      color: $white;
+      pointer-events: none;
+      svg {
+        fill: $white;
+      }
+    }
+    svg {
+      margin-right: 7px;
+    }
+  }
+  
+  &-settings {
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    button.#{$namespace}-menu-tab {
+      width: 100%;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+

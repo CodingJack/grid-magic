@@ -1,0 +1,317 @@
+@import "_/variables";
+@import "_/fonts";
+@import "_/colors";
+@import "_/loaders";
+@import "_/mixins";
+@import "_/breakpoints";
+@import "_/notification-box";
+
+##{$namespace}-app {
+  .#{$namespace} {
+    &-overview {
+      margin-top: 50px;
+      &-empty {
+        margin-top: 0;
+      }
+    }
+    &-grid-list {
+      /*
+      &-wrap {}
+      */
+      &-header {
+        justify-content: space-between;
+        margin-bottom: 20px;
+        h3 {
+          margin-bottom: 0 !important;
+        }
+      }
+      &-container {
+        &-bg {
+          padding: 50px 0;
+          background-size: cover;
+          background-color: $hint-gray;
+          text-align: center;
+          @include tablet {
+            margin-top: -30px;
+            > * {
+              margin-left: 0;
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      &-row {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        font-size: 12px;
+        background: $white;
+        transition: background-color 0.3s ease-out;
+        &:not(.#{$namespace}-grid-list-legend) {
+          &:hover {
+            background: $light-gray;
+            @include tablet {
+              background: $white;
+            }
+          }
+        }
+        > * {
+          display: flex;
+          height: 100%;
+          align-items: center;
+        }
+        textarea {
+          opacity: 0;
+          position: fixed;
+          z-index: -1;
+        }
+        &-new {
+          &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: $purple;
+            content: "";
+          }
+        }
+        @include tablet {
+          flex-direction: column;
+          height: auto;
+          margin-bottom: 30px;
+          border-bottom: 1px dashed $light-gray;
+          padding-bottom: 30px;
+          &:hover {
+            background: $white;
+          }
+        }
+      }
+      &-legend {
+        background: $white;
+        border-bottom: 1px solid $hint-gray;
+        span, 
+        a {
+          font-size: 13px;
+          font-weight: 600;
+        }
+        a {
+          color: $black;
+          text-decoration: none;
+          svg {
+            display: none;
+            margin-top: 1px;
+          }
+          &:hover {
+            svg {
+              display: inline-block;
+            }
+          }
+        }
+        @include tablet {
+          display: none;
+        }
+      }
+      &-fav {
+        text-align: center;
+        a {
+          svg {
+            display: inline-block;
+            margin-top: 0;
+          }
+        }
+      }
+      &-cell {
+        &-box {
+          flex-basis: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include tablet {
+            flex-basis: auto;
+            justify-content: center;
+          }
+        }
+        &-id {
+          flex-basis: 100px;
+          justify-content: left;
+          
+          span {
+            padding-left: 25px;
+          }
+          @include tablet {
+            flex-basis: auto;
+            justify-content: center;
+            span {
+              padding-left: 0;
+            }
+          }
+        }
+        &-short {
+          flex-basis: calc(15% - 20px);
+          .#{$namespace}-input-switch-edit {
+            input {
+              width: calc(100% - 80px);
+            }
+          }
+        }
+        &-mid {
+          flex-basis: calc(20% - 20px);
+        }
+        &-long {
+          flex-basis: calc(30% - 70px);
+           @include tablet {
+            margin-top: 10px;
+          }
+        }
+        &.#{$namespace}-hide-tablet,
+        &.#{$namespace}-hide-notebook {
+          flex-basis: 0;
+        }
+        &-collapse {
+          &-short {
+            @include notebook {
+              flex-basis: calc(30% - 75px);
+            }
+          }
+          &-long {
+            @include notebook {
+              flex-basis: 40%;
+            }
+          }
+        }
+      }
+      &-pagination {
+        padding: 20px 0;
+        text-align: right;
+        &-btn {
+          width: 30px;
+          height: 30px;
+          border-radius: 3px;
+          justify-content: center;
+          margin: 0 0 0 10px;
+          color: $shade-gray;
+          background-color: $light-gray;
+          transition: none;
+          &:hover,
+          &:disabled {
+            opacity: 1;
+            color: $white;
+            background-color: $aqua;
+          }
+          &:disabled {
+            opacity: 1;
+          }
+          &:hover {
+            filter: none;
+            
+          }
+        }
+      }
+      &-btn {
+        &-edit {
+          width: 105px;
+          @include grid-list-btn;
+        }
+        &-duplicate {
+          width: 110px;
+          @include grid-list-btn;
+        }
+        &-delete {
+          width: 106px;
+          @include grid-list-btn;
+        }
+      }
+    }
+    &-registered {
+      margin-top: 0;
+      padding-top: 10px;
+      > * {
+        margin-top: 20px;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    &-changelog {
+      .#{$namespace}-info-content {
+        height: 485px;
+        overflow: scroll;
+        overflow-x: hidden;
+        h4 {
+          margin-top: 40px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    &-input-switch {
+      box-sizing: border-box;
+      &-edit {
+        display: none;
+        width: 100%;
+        align-items: center;
+        input {
+          width: calc(100% - 150px);
+          min-width: 200px;
+          background: $white;
+          border-left: 1px solid transparent;
+        }
+        button {
+          margin-left: 5px;
+          transition-property: filter, opacity;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+      &:hover,
+      &:focus {
+        .#{$namespace}-input-switch-text {
+          display: none;
+        }
+        .#{$namespace}-input-switch-edit {
+          display: inline-flex !important;
+        } 
+      }
+      &:focus {
+        outline: none;
+        input {
+          @include element-shadow;
+        }
+      }
+      @include tablet {
+        &:hover,
+        &:focus {
+          .#{$namespace}-input-switch-text {
+            display: flex;
+          }
+          .#{$namespace}-input-switch-edit {
+            display: none !important;
+          } 
+        }
+      }
+    }
+    &-bulk-delete {
+      @include tablet {
+        display: none;
+      }
+      &-container {
+        width: 331px;
+        justify-content: space-between;
+        @include grid-list-btn;
+      }
+      &-select-all {
+        display: none;
+        &-visible {
+          display: inline-flex;
+          @include tablet {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
