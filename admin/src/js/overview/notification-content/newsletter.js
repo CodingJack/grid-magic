@@ -66,7 +66,7 @@ const Newsletter = () => {
 
   return (
     <>
-      <h4 id={ label }>Join 15,000 others on the ThemePunch mailing list</h4>
+      <h4 id={ label }>Join 15,000 others on the CodingJack mailing list</h4>
       <div className={ `${ namespace }-flex ${ namespace }-pad-top-10` }>
         <InputText 
           namespace={ namespace }

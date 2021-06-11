@@ -1,14 +1,14 @@
 {
   "grid_list": {
-    "title": "All Essential Grids"
+    "title": "All Grid Magics"
   },
   "how_to_use": {
-    "title": "How to Use Essential Grid",
+    "title": "How to Use Grid Magic",
     "txt1": "From the",
     "txt2": "page and/or post editor",
-    "txt3": "insert the Essential Grid block or insert the shortcode from the grid table above.",
+    "txt3": "insert the Grid Magic block or insert the shortcode from the grid table above.",
     "txt4": "widgets panel",
-    "txt5": "drag the Essential Grid widget to the desired sidebar or other widget area."
+    "txt5": "drag the Grid Magic widget to the desired sidebar or other widget area."
   },
   "version_info": {
     "title": "Version Information",

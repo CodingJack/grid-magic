@@ -1,21 +1,21 @@
 {
-  "name": "essential-grid-v4",
-  "version": "4.0.0",
-  "description": "Essential Grid",
-  "author": "ThemePunch",
+  "name": "gmagic",
+  "version": "0.1.0",
+  "description": "Grid Magic - The Best Premium Grid Plugin",
+  "author": "CodingJack",
   "license": "",
   "keywords": [
-    "ThemePunch",
-    "Essential Grid"
+    "CodingJack",
+    "Grid Magic"
   ],
-  "homepage": "https://www.themepunch.com/",
+  "homepage": "https://github.com/CodingJack/grid-magic",
   "repository": {
     "type": "git",
-    "url": "https://github.com/themepunch/"
+    "url": "https://github.com/CodingJack/grid-magic"
   },
   "bugs": {
-    "url": "https://themepunch.monday.com/",
-    "email": "info@themepunch.support"
+    "url": "https://github.com/CodingJack/grid-magic",
+    "email": "support@codingjack.com"
   },
   "main": "admin/src/js/index.js",
   "dependencies": {

@@ -12,7 +12,7 @@ import { shallow } from 'enzyme';
  */
 import Button from '../../../src/js/components/buttons/button';
 
-const namespace = 'esg-v4';
+const namespace = 'gmagic';
 Enzyme.configure( { adapter: new Adapter() } );
 
 const text = 'This is a button';

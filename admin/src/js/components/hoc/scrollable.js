@@ -14,7 +14,7 @@ const {
   PureComponent,
 } = React;
 
-const namespace = 'esg-v4';
+const namespace = 'gmagic';
 let scrollbarSize;
 
 /*
@@ -329,7 +329,7 @@ class Scrollable extends PureComponent {
       width: `calc(100% - 200px + ${ scrollbarWidth + scrollbarSpacing - scrollbarSize }px)`,
     };
     
-    const panelId = `esg-${ Math.floor( Math.random() * 100000 ) }`;
+    const panelId = `gmagic-${ Math.floor( Math.random() * 100000 ) }`;
     const attrs = {
       'aria-controls': panelId,
       'aria-valuenow': this.value,

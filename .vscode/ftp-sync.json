@@ -1,8 +1,8 @@
 {
     "remotePath": "./",
     "host": "codingjacks.sftp.wpengine.com",
-    "username": "codingjacks-esg",
-    "password": "9Y8bAdt4y1tn",
+    "username": "codingjacks-gridmagic",
+    "password": "hjplH16nyR7P",
     "port": 2222,
     "secure": true,
     "protocol": "sftp",

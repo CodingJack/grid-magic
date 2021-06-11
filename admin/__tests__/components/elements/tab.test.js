@@ -12,7 +12,7 @@ import { shallow } from 'enzyme';
  */
 import Tab from '../../../src/js/components/buttons/tab';
 
-const namespace = 'esg-v4';
+const namespace = 'gmagic';
 Enzyme.configure( { adapter: new Adapter() } );
 
 test( 'it renders correctly', () => {

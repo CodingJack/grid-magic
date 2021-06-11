@@ -40,7 +40,7 @@ msgid "Unable to save favorite"
 msgstr ""
 
 #: admin/src/js/overview.js:83
-msgid "How To Use Essential Grid"
+msgid "How To Use Grid Magic"
 msgstr ""
 
 #: admin/src/js/overview.js:84

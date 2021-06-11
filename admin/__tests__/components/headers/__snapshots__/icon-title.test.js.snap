@@ -2,7 +2,7 @@
 
 exports[`it renders correctly 1`] = `
 <p
-  className="esg-v4-flex-solid esg-v4-pad-top-25"
+  className="gmagic-flex-solid gmagic-pad-top-25"
 >
   <svg
     aria-hidden={true}
@@ -21,7 +21,7 @@ exports[`it renders correctly 1`] = `
     />
   </svg>
   <span
-    className="esg-v4-pad-left-5"
+    className="gmagic-pad-left-5"
   >
     Some Text
   </span>
@@ -31,7 +31,7 @@ exports[`it renders correctly 1`] = `
 exports[`it renders correctly 2`] = `
 <p
   bold={true}
-  className="esg-v4-flex-solid esg-v4-pad-top-25"
+  className="gmagic-flex-solid gmagic-pad-top-25"
   color="green"
   icon="check"
   namespace="name-space"
@@ -55,11 +55,11 @@ exports[`it renders correctly 2`] = `
     />
   </svg>
   <span
-    className="esg-v4-pad-left-5"
+    className="gmagic-pad-left-5"
   >
     Some Text
   </span>
 </p>
 `;
 
-exports[`it unmounts should match the snapshot 1`] = `"<p class=\\"esg-v4-flex-solid esg-v4-pad-top-25\\"><svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 24 24\\" aria-hidden=\\"true\\" style=\\"fill:red;margin-left:-4px\\"><path d=\\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\\"></path></svg><span class=\\"esg-v4-pad-left-5\\">Some Text</span></p>"`;
+exports[`it unmounts should match the snapshot 1`] = `"<p class=\\"gmagic-flex-solid gmagic-pad-top-25\\"><svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 24 24\\" aria-hidden=\\"true\\" style=\\"fill:red;margin-left:-4px\\"><path d=\\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\\"></path></svg><span class=\\"gmagic-pad-left-5\\">Some Text</span></p>"`;

@@ -16,7 +16,7 @@ import AppLoader from './components/loaders/apploader';
 import ErrorBoundary from './error';
 import { AppContext } from './context';
 
-const namespace = 'esg-v4';
+const namespace = 'gmagic';
 const {
   Component,
   // StrictMode,
@@ -59,7 +59,7 @@ if( typeof essentialGridV4Data !== 'undefined' ) {
   // console.log(essentialGridV4Data);
   
   if( essentialGridV4Data ) {
-    const root = document.getElementById( 'esg-v4-app' );
+    const root = document.getElementById( 'gmagic-app' );
     
     if( root ) {
       const { jsPath = '' } = essentialGridV4Data;

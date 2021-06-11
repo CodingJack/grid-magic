@@ -131,7 +131,7 @@ class Admin extends Component {
     }
 
     if( sortIds ) {
-      gridList = sortObject( 'id', 'number', grids, gridList, false, 'esg-' );
+      gridList = sortObject( 'id', 'number', grids, gridList, false, 'gmagic-' );
     } else if( sortNames ) {
       gridList = sortObject( 'name', 'string', grids, gridList );
     } else if( sortModified ) {
@@ -553,7 +553,7 @@ class Admin extends Component {
     const hasDraft = gridKeys.indexOf( draftId ) !== -1;
     let newId = gridKeys.length;
   
-    while( gridKeys.indexOf( `esg-${ newId.toString() }` ) !== -1 ) {
+    while( gridKeys.indexOf( `gmagic-${ newId.toString() }` ) !== -1 ) {
       newId++;
     }
     if( hasDraft && newId === 2 ) {
@@ -566,13 +566,13 @@ class Admin extends Component {
     let name = `Grid: ${ newId }`;
     
     if( ! draft ) {
-      let slugId = `esg-${ newId }`;
+      let slugId = `gmagic-${ newId }`;
       let i = 1;
       
       while( gridKeys.indexOf( slugId ) !== -1 ) {
         name = `${ name }-${ i }`;
         newId = `${ newId }${ i }`;
-        slugId = `esg-${ newId }`;
+        slugId = `gmagic-${ newId }`;
         i++;
       }
     } else {
@@ -592,7 +592,7 @@ class Admin extends Component {
     if( draft ) {
       newGrid.draft = true;
     }
-    newId = `esg-${ realId }`;
+    newId = `gmagic-${ realId }`;
     const newList = { [ newId ]: { ...newGrid } };
     
     Object.keys( gridList ).forEach( key => {
@@ -685,11 +685,11 @@ class Admin extends Component {
       const clonedGrid = cloneObj( grid );
       let newId = gridLength;
       
-      while( gridKeys.indexOf( `esg-${ newId.toString() }` ) !== -1 ) {
+      while( gridKeys.indexOf( `gmagic-${ newId.toString() }` ) !== -1 ) {
         newId++;
       }
       const { name, alias } = clonedGrid;
-      const ids = parseInt( gridId.replace( 'esg-', '' ), 10 );
+      const ids = parseInt( gridId.replace( 'gmagic-', '' ), 10 );
       
       let newName = `${ name }-${ ids }`;
       let newAlias = `${ alias }-${ ids }`;
@@ -712,7 +712,7 @@ class Admin extends Component {
       
       clonedGrid.name = newName;
       clonedGrid.alias = newAlias;
-      newId = `esg-${ newId }`;
+      newId = `gmagic-${ newId }`;
       
       const realMax = max !== -1 ? max : gridLength;
       const pageIndex = curPagination * realMax;
@@ -828,7 +828,7 @@ class Admin extends Component {
         grids, 
         gridList, 
         selected, 
-        prop === 'id' ? 'esg-' : '', // replace string when sorting by ID
+        prop === 'id' ? 'gmagic-' : '', // replace string when sorting by ID
       );
       
       return { 

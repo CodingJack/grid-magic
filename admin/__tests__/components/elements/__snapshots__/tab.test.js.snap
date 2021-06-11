@@ -2,12 +2,12 @@
 
 exports[`it renders correctly 1`] = `
 <div
-  className="esg-v4-error-js"
+  className="gmagic-error-js"
 >
   <p>
     Something went wrong.  Please 
     <a
-      href="https://github.com/themepunch/essential-grid-v4/issues"
+      href="https://github.com/codingjack/gmagic/issues"
     >
       report
     </a>
@@ -26,7 +26,7 @@ exports[`it renders correctly 1`] = `
 
 exports[`it renders correctly 2`] = `
 <div
-  className="esg-v4-error-js"
+  className="gmagic-error-js"
   icon="check"
   namespace="name-space"
   onClick={[Function]}
@@ -36,7 +36,7 @@ exports[`it renders correctly 2`] = `
   <p>
     Something went wrong.  Please 
     <a
-      href="https://github.com/themepunch/essential-grid-v4/issues"
+      href="https://github.com/codingjack/gmagic/issues"
     >
       report
     </a>
@@ -53,4 +53,4 @@ exports[`it renders correctly 2`] = `
 </div>
 `;
 
-exports[`onClick callback works and it unmounts should match the snapshot 1`] = `"<button class=\\"esg-v4-btn esg-v4-white esg-v4-btn-icon-only esg-v4-menu-tab\\" role=\\"tab\\" tabindex=\\"0\\"><svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 24 24\\" aria-hidden=\\"true\\"><path d=\\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\\"></path></svg></button>"`;
+exports[`onClick callback works and it unmounts should match the snapshot 1`] = `"<button class=\\"gmagic-btn gmagic-white gmagic-btn-icon-only gmagic-menu-tab\\" role=\\"tab\\" tabindex=\\"0\\"><svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 24 24\\" aria-hidden=\\"true\\"><path d=\\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\\"></path></svg></button>"`;

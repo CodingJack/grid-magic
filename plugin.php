@@ -1,17 +1,17 @@
 <?php
 /*
-@package   Essential Grid - V4
-@author    ThemePunch <info@themepunch.com>
-@link      http://codecanyon.net/item/essential-grid-v4-wordpress-plugin/7563340
-@copyright 2021 ThemePunch
+@package   Grid Magic
+@author    CodingJack <support@codingjack.com>
+@link      https://github.com/CodingJack/grid-magic
+@copyright 2021 CodingJack
 @wordpress-plugin
-Plugin Name:       Essential Grid - V4
-Plugin URI:        https://www.essential-grid-v4.com
-Description:       Essential Grid - V4 - The Original Premium Grid Plugin
-Version:           4.0.0
-Author:            ThemePunch
-Author URI:        https://themepunch.com
-Text Domain:       esg-v4
+Plugin Name:       Grid Magic
+Plugin URI:        https://github.com/CodingJack/grid-magic
+Description:       Grid Magic - The Best Premium Grid Plugin
+Version:           0.1.0
+Author:            CodingJack
+Author URI:        https://github.com/CodingJack
+Text Domain:       gmagic
 Domain Path:       /language
 */
 
@@ -20,13 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
-$esg_v4_data = get_option( 'essential_grid_v4_data' );
+$gmagic_data = get_option( 'gmagic_data' );
 
 // if experiencing issues let this pass once to clear the data
-//if( empty( $esg_v4_data ) ) {
-  update_option( 'essential_grid_v4_data', array(
+//if( empty( $gmagic_data ) ) {
+  update_option( 'gmagic_data', array(
     'plugin' => array(
-      'availableVersion' => '4.0.0',
+      'availableVersion' => '0.1.0',
       'purchaseCodeRegistered' => true,
       'purchaseCode' => 'ffcb186d-6b03-4a25-bd36-16c0c5d53a7d'
     )

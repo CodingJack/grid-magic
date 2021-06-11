@@ -1,5 +1,5 @@
 <?php
 
 ?>
-<div id="esg-v4-app"></div>
+<div id="gmagic-app"></div>
 <?php

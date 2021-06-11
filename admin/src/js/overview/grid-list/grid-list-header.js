@@ -77,7 +77,7 @@ const GridListHeader = ( {
   
   return (
     <div className={ `${ namespace }-grid-list-header ${ namespace }-flex-solid` }>
-      <h3>{ __( 'overview.grid_list.title', 'All Essential Grids' ) }</h3>
+      <h3>{ __( 'overview.grid_list.title', 'All Grid Magics' ) }</h3>
       <div className={ `${ namespace }-flex-solid` }>
         <InputTextWithState 
           placeholder="Search Listed Grids"

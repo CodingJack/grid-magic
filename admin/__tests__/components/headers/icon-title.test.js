@@ -12,7 +12,7 @@ import { shallow } from 'enzyme';
  */
 import IconTitle from '../../../src/js/components/headers/icon-title';
 
-const namespace = 'esg-v4';
+const namespace = 'gmagic';
 Enzyme.configure( { adapter: new Adapter() } );
 
 test( 'it renders correctly', () => {

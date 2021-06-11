@@ -55,7 +55,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
         <style>
           body {margin: 0; background: #f0f0f1}
           #adminmenumain, #wpfooter, #wp-auth-check-wrap, #wpadminbar {display: none}
-          #esg-v4-app {position: absolute; top: 0; left: 0; width: 100%; z-index: 999999; background: #f0f0f1}
+          #gmagic-app {position: absolute; top: 0; left: 0; width: 100%; z-index: 999999; background: #f0f0f1}
         </style>
       ';
     }
@@ -94,7 +94,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
      * @since 4.0.0
     */
     public function on_init() {
-      if( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] === 'essential-grid-v4' ) {
+      if( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] === 'gmagic' ) {
         $this->isEsgAdmin = true;
         
         remove_all_actions( 'wp_loaded' );
@@ -130,7 +130,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
      * @since 4.0.0
     */
     public function add_plugin_admin_menu() {
-      // this action fires after the "init" hook where we check to see if we're in the ESG admin
+      // this action fires after the "init" hook where we check to see if we're in the gmagic admin
       // so what we do here is we remove all the menu items from the WP Menu bar if we're in our own admin,
       // we're not showing the WP menu at all inside our admin, and so this just reduces the page's output HTML
       if( $this->isEsgAdmin ) {
@@ -142,10 +142,10 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
         }
       }
       add_menu_page(
-        'ESG-V4',
-        'ESG-V4',
+        'gmagic',
+        'gmagic',
         'manage_options',
-        'essential-grid-v4',
+        'gmagic',
         array( $this, 'admin_display' ),
         'dashicons-screenoptions'
       );
@@ -159,11 +159,11 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
       $data = $request->get_param( 'data' );
       
       if( ! empty( $data ) ) {
-        update_option( 'essential_grid_v4_data', $data );
+        update_option( 'gmagic_data', $data );
         return 'success';
       }
       
-      $data = get_option( 'essential_grid_v4_data' );
+      $data = get_option( 'gmagic_data' );
       return json_encode( $data );
     }
     
@@ -207,28 +207,28 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
      * @since 4.0.0
     */
     public function rest_init() {
-      register_rest_route( 'essential-grid-v4/v1', '/opt/', array(
+      register_rest_route( 'gmagic/v1', '/opt/', array(
         'methods' => array( 'GET', 'POST', 'PUT' ),
         'callback' => array( $this, 'handle_esg_data' ),
         'permission_callback' => function() {
           return true; // temp
         }
       ) );
-      register_rest_route( 'essential-grid-v4/v1', '/newsletter-subscribe/', array(
+      register_rest_route( 'gmagic/v1', '/newsletter-subscribe/', array(
         'methods' => array( 'POST' ),
         'callback' => array( $this, 'handle_newsletter_subscribe' ),
         'permission_callback' => function() {
           return true; // temp
         }
       ) );
-      register_rest_route( 'essential-grid-v4/v1', '/changelog/', array(
+      register_rest_route( 'gmagic/v1', '/changelog/', array(
         'methods' => array( 'GET' ),
         'callback' => array( $this, 'get_changelog' ),
         'permission_callback' => function() {
           return true; // temp
         }
       ) );
-      register_rest_route( 'essential-grid-v4/v1', '/fullchangelog/', array(
+      register_rest_route( 'gmagic/v1', '/fullchangelog/', array(
         'methods' => array( 'GET' ),
         'callback' => array( $this, 'get_full_changelog' ),
         'permission_callback' => function() {
@@ -242,7 +242,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
      * @since 4.0.0
     */
     public function enqueue_scripts( $hook ) {
-      if( $hook !== 'toplevel_page_essential-grid-v4' ) {
+      if( $hook !== 'toplevel_page_gmagic' ) {
         return;
       }
       /*
@@ -313,13 +313,13 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
         'adminUrl' => admin_url(),
         'jsPath' => plugins_url( 'dist/js/', __FILE__ ),
         'imgPath' => plugins_url( 'dist/img/', __FILE__ ),
-        'endpoint' => get_home_url() . '/wp-json/essential-grid-v4/v1/',
+        'endpoint' => get_home_url() . '/wp-json/gmagic/v1/',
         'language' => plugins_url( 'language/page/', __FILE__ ) . $lang . '.json' // "page" is replaced dynamically with "overview", "editor" or "globals"
       );
       
       echo "<script>var essentialGridV4Data = '" . json_encode( $params ) . "';</script>" . "\n";
-      echo '<script src="' . plugins_url( 'dist/js/vendors/esg-vendors.min.js', __FILE__ ) . '"></script>' . "\n";
-      echo '<script src="' . plugins_url( 'dist/js/esg.min.js', __FILE__ ) . '"></script>' . "\n";
+      echo '<script src="' . plugins_url( 'dist/js/vendors/gmagic-vendors.min.js', __FILE__ ) . '"></script>' . "\n";
+      echo '<script src="' . plugins_url( 'dist/js/gmagic.min.js', __FILE__ ) . '"></script>' . "\n";
     }
   }
   

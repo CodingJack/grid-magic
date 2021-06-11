@@ -17,7 +17,7 @@ module.exports = env => {
     output: {
       path: resolve( 'dist' ),
       filename: pathData => {
-        return pathData.chunk.name === 'main' ? 'esg.min.js' : 'vendors/esg-vendors.min.js';
+        return pathData.chunk.name === 'main' ? 'gmagic.min.js' : 'vendors/gmagic-vendors.min.js';
       },
       chunkFilename: pathData => {
         let isVendor;
@@ -31,7 +31,7 @@ module.exports = env => {
           const ids = name.split( '-' );
           fileName = ids[ ids.length - 1 ];
         }
-        return pathData.chunk.chunkReason ? `vendors/esg-${ fileName }.min.js` : `components/esg_[id].min.js`;
+        return pathData.chunk.chunkReason ? `vendors/gmagic-${ fileName }.min.js` : `components/gmagic_[id].min.js`;
       },
       publicPath: 'js/',
     },

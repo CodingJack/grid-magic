@@ -43,12 +43,12 @@ const Header = ( { namespace = '', page = 'overview' } ) => {
         icon="help"
         text="Help Center"
         extraClass={ `${ namespace }-hide-smartphone` }
-        onClick={ () => window.open( 'https://www.themepunch.com/support-center/essential-grid/#documentation' ) }
+        onClick={ () => window.open( 'https://www.codingjack.com/support-center/gmagic/#documentation' ) }
       />
       <a 
         className={ `${ namespace }-github ${ namespace }-hover ${ namespace }-hide-tablet` } 
         style={ { backgroundImage: `url(${ imgPath }github.png)` } }
-        href="https://github.com/themepunch/essential-grid-v4" 
+        href="https://github.com/codingjack/gmagic" 
         target="_blank" 
         rel="noreferrer"
       ></a>

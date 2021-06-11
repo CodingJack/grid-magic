@@ -16,7 +16,7 @@ const ErrorMessage = ( { namespace = '', message = '' } ) => {
   return (
     <div className={ `${ namespace }-error-js` }>
       <p>
-        Something went wrong.  Please <a href="https://github.com/themepunch/essential-grid-v4/issues">report</a> the error below. 
+        Something went wrong.  Please <a href="https://github.com/codingjack/gmagic/issues">report</a> the error below. 
         <i>{ message }</i>            
       </p>
       <p><i>{ message }</i></p>

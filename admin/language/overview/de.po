@@ -40,8 +40,8 @@ msgid "Unable to save favorite"
 msgstr "Favorit kann nicht gespeichert werden"
 
 #: admin/src/js/overview.js:83
-msgid "How To Use Essential Grid"
-msgstr "Wie man Essential Grid nutzt"
+msgid "How To Use Grid Magic"
+msgstr "Wie man Grid Magic nutzt"
 
 #: admin/src/js/overview.js:84
 msgid "Version Information"

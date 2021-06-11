@@ -23,27 +23,27 @@ if ( ! class_exists( 'EssentialGridV4Front' ) ) {
     
     public function __construct() {
     
-      $this->scriptUrl = plugins_url( 'dist/js/essential-grid-v4.min.js', __FILE__ );
+      $this->scriptUrl = plugins_url( 'dist/js/gmagic.min.js', __FILE__ );
       add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
     }
     
     public function enqueue_scripts() {
 
       wp_enqueue_script( 
-        'essential-grid-v4-js', 
-        plugins_url( 'dist/js/essential-grid-v4.min.js', __FILE__ ), 
+        'gmagic-js', 
+        plugins_url( 'dist/js/gmagic.min.js', __FILE__ ), 
         $this->version, 
         true 
       );
       
       wp_localize_script(
-        'essential-grid-v4-js',
+        'gmagic-js',
         'essentialGridV4Data', 
         array()
       );
       
       wp_add_inline_script(
-        'essential-grid-v4-js', 
+        'gmagic-js', 
         '',
         'after'
       );

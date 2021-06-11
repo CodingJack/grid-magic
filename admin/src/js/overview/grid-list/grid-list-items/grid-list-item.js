@@ -131,7 +131,7 @@ class GridListItem extends Component {
             onClick={ gridAction }
           />
         </span>
-        <span className={ `${ gridCellClass }-box ${ gridCellClass }-id` }><span>{ id.replace( 'esg-', '' ) }</span></span>
+        <span className={ `${ gridCellClass }-box ${ gridCellClass }-id` }><span>{ id.replace( 'gmagic-', '' ) }</span></span>
         <div 
           className={ `${ gridCellClass }-short ${ gridCellClass }-collapse-short ${ inputSwitchClass }` }
           tabIndex="0"

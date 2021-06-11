@@ -12,7 +12,7 @@ import { shallow } from 'enzyme';
  */
 import InputText from '../../../src/js/components/inputs/input-text';
 
-const namespace = 'esg-v4';
+const namespace = 'gmagic';
 Enzyme.configure( { adapter: new Adapter() } );
 
 

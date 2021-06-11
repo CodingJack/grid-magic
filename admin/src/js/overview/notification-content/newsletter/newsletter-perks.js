@@ -24,8 +24,8 @@ const NewsletterPerks = ( { namespace = '' } ) => {
         namespace={ namespace }
       />
       <ul>
-        <li>Receive info on the latest ThemePunch product updates</li>
-        <li>Be the first to know about new products by ThemePunch and their partners</li>
+        <li>Receive info on the latest CodingJack product updates</li>
+        <li>Be the first to know about new products by CodingJack and their partners</li>
         <li>Participate in polls and customer surveys that help us increase the quality of our products and services</li>
       </ul>
     </>
