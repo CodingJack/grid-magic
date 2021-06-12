@@ -31,7 +31,6 @@ const Tab = ( {
 } ) => {
   const color = ! selected ? 'white' : 'purple';
   const onClick = () => {
-    console.log(text);
     if( ! selected ) {
       callback( section );
     }
