@@ -27,9 +27,11 @@ const Tab = ( {
   section = 'overview',
   selected = false,
   onClick: callback,
+  extraClass = '',
 } ) => {
   const color = ! selected ? 'white' : 'purple';
   const onClick = () => {
+    console.log(text);
     if( ! selected ) {
       callback( section );
     }
@@ -37,6 +39,7 @@ const Tab = ( {
   
   let clas = `${ namespace }-menu-tab`;
   clas = ! selected ? clas : `${ clas } ${ clas }-selected`;
+  clas = ! extraClass ? clas : `${ clas } ${ extraClass }`;
   
   return (
     <Button 
@@ -57,6 +60,7 @@ Tab.propTypes = {
   section: stringRequired,
   icon: string,
   selected: bool,
+  extraClass: string,
 };
 
 export default Tab;

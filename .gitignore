@@ -1,2 +1,4 @@
 node_modules/
+.vscode/
 .DS_STORE
+ftp-sync.json

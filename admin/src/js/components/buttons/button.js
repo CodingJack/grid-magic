@@ -80,12 +80,18 @@ const Button = ( {
   const isChecked = trueFalse( checked ) ? true : false;
   const colorClass = color ? `${ namespace }-${ color } ` : '';
   const textStyle = ! textColor ? null : { color: textColor };
+
+  const onCallback = () => {
+    if( onClick ) {
+      onClick();
+    }
+  };
   
   return (
     <button 
       className={ `${ namespace }-btn ${ colorClass }${ clas }` } 
       role={ role }
-      onClick={ onClick }
+      onClick={ onCallback }
       disabled={ disabled }
       tabIndex="0"
     >

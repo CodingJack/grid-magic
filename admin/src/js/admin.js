@@ -78,14 +78,12 @@ class Admin extends Component {
     const { data: masterData = {} } = this.props;
     const cookiePrefix = namespace.replace( '-', '_' );
     
-    /*
     // uncomment to clear cookies
     setCookie( `${ cookiePrefix }_max_grids`, 25 );
     setCookie( `${ cookiePrefix }_sort_favs`, false );
     setCookie( `${ cookiePrefix }_sort_ids`, false );
     setCookie( `${ cookiePrefix }_sort_names`, false );
     setCookie( `${ cookiePrefix }_sort_modified`, false );
-    */
     
     const sortFavs = trueFalse(
       getCookie( `${ cookiePrefix }_sort_favs`, false )
@@ -446,12 +444,14 @@ class Admin extends Component {
       
       draftId = curDraftId;
       data = { ...masterData };
+
       return { 
         masterData, 
         gridLength,
         draftId: '', 
         newGrids: [ newId ], 
         restInRoute: true,
+        page: 'editor',
       };
     }, () => {
       if( callback && isFunction( callback ) ) {
@@ -475,6 +475,7 @@ class Admin extends Component {
     // possible incoming data to handle depending on the action
     switch( action ) {
       case 'edit_grid':
+        console.log('enter the editor');
         this.changePage( 'editor', { gridId } );
         break;
       case 'create_grid':

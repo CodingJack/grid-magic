@@ -142,10 +142,10 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
         }
       }
       add_menu_page(
-        'gmagic',
-        'gmagic',
+        'Grid Magic',
+        'Grid Magic',
         'manage_options',
-        'gmagic',
+        'grid-magic',
         array( $this, 'admin_display' ),
         'dashicons-screenoptions'
       );
@@ -242,7 +242,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
      * @since 4.0.0
     */
     public function enqueue_scripts( $hook ) {
-      if( $hook !== 'toplevel_page_gmagic' ) {
+      if( $hook !== 'toplevel_page_grid-magic' ) {
         return;
       }
       /*

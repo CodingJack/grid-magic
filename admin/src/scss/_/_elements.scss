@@ -193,6 +193,7 @@
       }
     }
     &-hide {
+      display: none !important;
       &-notebook {
         @include notebook {
          display: none !important;

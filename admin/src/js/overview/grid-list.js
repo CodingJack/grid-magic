@@ -135,13 +135,18 @@ class GridList extends Component {
       const { gridAction } = adminContext;
       gridAction( {
         action: 'create_grid',
-        callback: () => {
-          this.setState( { clearSearch: false }, () => {
-            this.afterSearchUpdate( '' );
-          } );
-        }
+        callback: this.newGridCallback,
       } );
     } );
+  };
+
+  newGridCallback = () => {
+    if( ! this.unmounted ) {
+      console.log('fucker');
+      this.setState( { clearSearch: false }, () => {
+        this.afterSearchUpdate( '' );
+      } );
+    }
   };
   
   bulkDeleteSelectAll = checked => {
@@ -282,7 +287,7 @@ class GridList extends Component {
   }
   
   checkBulkDelete = () => {
-    if( window.innerWidth < tablet ) {
+    if( ! this.unmounted && window.innerWidth < tablet ) {
       this.toggleBulkDelete( false );
     }
   };
@@ -297,6 +302,7 @@ class GridList extends Component {
   }
   
   componentWillUnmount() {
+    this.unmounted = true;
     clearTimeout( this.debounce );
     window.removeEventListener( 'resize', this.onResize );
   }
