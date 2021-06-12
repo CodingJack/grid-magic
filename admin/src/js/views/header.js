@@ -43,12 +43,12 @@ const Header = ( { namespace = '', page = 'overview' } ) => {
         icon="help"
         text="Help Center"
         extraClass={ `${ namespace }-hide-smartphone` }
-        onClick={ () => window.open( 'https://www.codingjack.com/support-center/gmagic/#documentation' ) }
+        onClick={ () => window.open( 'https://github.com/CodingJack/grid-magic' ) }
       />
       <a 
         className={ `${ namespace }-github ${ namespace }-hover ${ namespace }-hide-tablet` } 
         style={ { backgroundImage: `url(${ imgPath }github.png)` } }
-        href="https://github.com/codingjack/gmagic" 
+        href="https://github.com/CodingJack/grid-magic" 
         target="_blank" 
         rel="noreferrer"
       ></a>
