@@ -453,7 +453,6 @@ class Admin extends Component {
         draftId: '', 
         newGrids: [ newId ], 
         restInRoute: true,
-        page: 'editor',
       };
     }, () => {
       if( callback && isFunction( callback ) ) {
@@ -477,7 +476,6 @@ class Admin extends Component {
     // possible incoming data to handle depending on the action
     switch( action ) {
       case 'edit_grid':
-        console.log('enter the editor');
         this.changePage( 'editor', { gridId } );
         break;
       case 'create_grid':

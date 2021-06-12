@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $gmagic_data = get_option( 'gmagic_data' );
 
 // if experiencing issues let this pass once to clear the data
-//if( empty( $gmagic_data ) ) {
+if( empty( $gmagic_data ) ) {
   update_option( 'gmagic_data', array(
     'plugin' => array(
       'availableVersion' => '0.1.0',
@@ -31,6 +31,6 @@ $gmagic_data = get_option( 'gmagic_data' );
       'purchaseCode' => 'ffcb186d-6b03-4a25-bd36-16c0c5d53a7d'
     )
   ));
-//}
+}
 
 require_once plugin_dir_path( __FILE__ ) . 'admin/admin.php';
