@@ -17,7 +17,7 @@ const NewsletterPerks = ( { namespace = '' } ) => {
     <>
       <IconTitle
         icon="alt_star"
-        color="red"
+        color="#C53A58"
         text="Perks of subscribing to our Newsletter"
         bold={ true }
         uppercase={ true }

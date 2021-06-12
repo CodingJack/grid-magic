@@ -13,7 +13,6 @@ import {
  * Internal dependencies.
  */
 import ErrorBoundary from './error';
-import PurchaseCodeSwitch from './overview/purchase-code-switch';
 import NotificationBox from './components/containers/notification-box';
 import HowToUse from './overview/notification-content/how-to-use';
 import VersionInformation from './overview/notification-content/version-information';
@@ -95,13 +94,12 @@ class Overview extends Component {
             />
             <NotificationBox 
               title={ __( `${ txtPath }version_info.title` ) }
-              color="aqua"
+              color="green"
               icon="info"
               namespace={ namespace }
               content={ VersionInformation }
               placeholderHeight={ 112 }
             />
-            <PurchaseCodeSwitch />
             <NotificationBox 
               title={ __( `${ txtPath }newsletter` ) }
               color="red"

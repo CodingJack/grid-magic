@@ -133,7 +133,7 @@ class Changelog extends Component {
                         <Fragment key={ `${ namespace }-version-${ i }-${ j }` }>
                           <p className={ `${ namespace }-flex-solid ${ namespace }-paragraph ${ namespace }-pad-top-25` }>
                             <>
-                              <Icon name={ icons[ section ] } color="purple" indent={ true } />
+                              <Icon name={ icons[ section ] } color="#3a58c5" indent={ true } />
                               <span 
                                 className={ `${ namespace }-pad-left-5 ${ namespace }-bold ${ namespace }-uppercase` }
                               >{ camelCase( section, true ) }</span>
