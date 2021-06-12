@@ -79,11 +79,13 @@ class Admin extends Component {
     const cookiePrefix = namespace.replace( '-', '_' );
     
     // uncomment to clear cookies
+    /*
     setCookie( `${ cookiePrefix }_max_grids`, 25 );
     setCookie( `${ cookiePrefix }_sort_favs`, false );
     setCookie( `${ cookiePrefix }_sort_ids`, false );
     setCookie( `${ cookiePrefix }_sort_names`, false );
     setCookie( `${ cookiePrefix }_sort_modified`, false );
+    */
     
     const sortFavs = trueFalse(
       getCookie( `${ cookiePrefix }_sort_favs`, false )

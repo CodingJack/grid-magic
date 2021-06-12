@@ -57,7 +57,9 @@ class Editor extends Component {
       getCookie( `${ cookiePrefix }_submenu`, 0 ),
       10,
     );
-    const curOptions = options[ subMenu ] || options[ Object.keys( options )[0] ];
+    const optionKeys = Object.keys( options );
+    const curKey = optionKeys[ subMenu ] || optionKeys[0];
+    const curOptions = options[ curKey ];
 
     this.state = {
       namespace,
