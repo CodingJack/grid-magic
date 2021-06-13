@@ -38,7 +38,7 @@ let cookiePrefix;
 
 /*
  * @desc takes the grid list and remixes it based on the selected filters
- * @since 4.0.0
+ * @since 0.1.0
 */
 class GridList extends Component {
   constructor() {

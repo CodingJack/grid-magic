@@ -8,7 +8,7 @@ import Admin from './admin';
 
 /*
  * @desc used in combination with the Loader clases to lazy-load components
- * @since 4.0.0
+ * @since 0.1.0
 */
 const Module = props => <Admin { ...props } />;
 

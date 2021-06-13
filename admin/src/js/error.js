@@ -18,7 +18,7 @@ const {
 
 /*
  * @desc error boundaries catch any errors that may occur
- * @since 4.0.0
+ * @since 0.1.0
 */
 class ErrorBoundary extends Component {
   constructor() {

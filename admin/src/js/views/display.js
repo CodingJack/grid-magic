@@ -23,7 +23,7 @@ const {
 
 /*
  * @desc the entry point for the admin header, its main body content and the REST notices
- * @since 4.0.0
+ * @since 0.1.0
 */
 class Display extends Component {
   constructor() {
@@ -33,7 +33,7 @@ class Display extends Component {
   
   /*
    * @desc fade app in onLoad
-   * @since 4.0.0
+   * @since 0.1.0
   */
   componentDidMount() {
     const { current: el } = this.ref;

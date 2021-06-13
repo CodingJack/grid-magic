@@ -16,7 +16,7 @@ import {
 
 /*
  * @desc text with an icon in front of it
- * @since 4.0.0
+ * @since 0.1.0
 */
 const IconTitle = ( {
   namespace = '',

@@ -15,7 +15,7 @@ import {
 
 /*
  * @desc input text element with options
- * @since 4.0.0
+ * @since 0.1.0
 */
 const InputText = ( {
   onChange,

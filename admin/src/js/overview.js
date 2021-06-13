@@ -32,7 +32,7 @@ const {
 
 /*
  * @desc the entry point for the overview page
- * @since 4.0.0
+ * @since 0.1.0
 */
 class Overview extends Component {
   constructor() {

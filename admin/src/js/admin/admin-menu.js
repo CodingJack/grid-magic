@@ -26,7 +26,7 @@ const {
 
 /*
  * @desc the main tab menu for the admin
- * @since 4.0.0
+ * @since 0.1.0
 */
 const AdminMenu = () => {
   const context = useContext( AdminContext );

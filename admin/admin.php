@@ -5,12 +5,12 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
-if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
+if ( ! class_exists( 'GridMagicAdmin' ) ) {
 
-  final class EssentialGridV4Admin {
+  final class GridMagicAdmin {
     
     private static $instance = null;
-    private $version = '4.0.0';
+    private $version = '0.1.0';
     private $isEsgAdmin = false;
     private $gridId = '';
     private $section = 'settings';
@@ -46,7 +46,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc hide the WP menu bar inside our admin
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function print_inline_css() {
       echo '<link rel="icon" type="image/png" href="' . plugins_url( 'dist/icons/favicon.ico', __FILE__ ) . '" />';
@@ -62,7 +62,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc remove meta boxes from external sources
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function remove_meta_boxes() {
       global $wp_meta_boxes;
@@ -74,7 +74,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc clean out any custom help tabs from external sources
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function remove_help_tabs() {
       $screen = get_current_screen();
@@ -83,7 +83,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc convert wildcard to boolean
-     * @since 4.0.0
+     * @since 0.1.0
     */
     private function isTrue( $val ) {
       return $val === '1' || $val === 1 || $val === 'true' || $val === true;
@@ -91,7 +91,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc check if we're in the admin for later usage, start our "remove actions/filters" chain
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function on_init() {
       if( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] === 'gmagic' ) {
@@ -119,7 +119,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc just a div for the JS generated HTML to live
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function admin_display() {
       require_once plugin_dir_path( __FILE__ ) . 'view/display.php'; 
@@ -127,7 +127,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc add admin plugin menu
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function add_plugin_admin_menu() {
       // this action fires after the "init" hook where we check to see if we're in the gmagic admin
@@ -153,7 +153,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc get/set to the master database object
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function handle_esg_data( WP_REST_Request $request ) {
       $data = $request->get_param( 'data' );
@@ -169,7 +169,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc subscribe to newsletter
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function handle_newsletter_subscribe( WP_REST_Request $request ) {
       $subscribe = $request->get_param( 'subscribe' );
@@ -184,27 +184,27 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc return partial changelog
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function get_changelog() {
       require_once plugin_dir_path( __FILE__ ) . 'content/changelog.php';
-      $changelog = new EssentialGridV4Changelog();
+      $changelog = new GridMagicChangelog();
       return $changelog->getShortChangelog();
     }
     
     /*
      * @desc return full changelog
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function get_full_changelog() {
       require_once plugin_dir_path( __FILE__ ) . 'content/changelog.php';
-      $changelog = new EssentialGridV4Changelog();
+      $changelog = new GridMagicChangelog();
       return $changelog->getFullChangelog();
     }
     
     /*
      * @desc register custom rest routes
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function rest_init() {
       register_rest_route( 'gmagic/v1', '/opt/', array(
@@ -239,7 +239,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc enqueue scripts
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function enqueue_scripts( $hook ) {
       if( $hook !== 'toplevel_page_grid-magic' ) {
@@ -247,7 +247,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
       }
       /*
        * @desc dequeue everything
-       * @since 4.0.0
+       * @since 0.1.0
       */
       global $wp_scripts;
       global $wp_styles;
@@ -269,7 +269,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
       
       /*
        * @desc these actions fire after admin_enqueue_scripts and can be safely removed
-       * @since 4.0.0
+       * @since 0.1.0
       */
       remove_all_actions( 'admin_head' );
       remove_all_actions( 'admin_footer' );
@@ -292,7 +292,7 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
     
     /*
      * @desc since we removed all "admin_print_scripts" actions we can't enqueue so we'll just print them inline instead
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function print_inline_js() {
       // lets check if a translation file exists
@@ -317,11 +317,11 @@ if ( ! class_exists( 'EssentialGridV4Admin' ) ) {
         'language' => plugins_url( 'language/page/', __FILE__ ) . $lang . '.json' // "page" is replaced dynamically with "overview", "editor" or "globals"
       );
       
-      echo "<script>var essentialGridV4Data = '" . json_encode( $params ) . "';</script>" . "\n";
+      echo "<script>var gridMagicData = '" . json_encode( $params ) . "';</script>" . "\n";
       echo '<script src="' . plugins_url( 'dist/js/vendors/gmagic-vendors.min.js', __FILE__ ) . '"></script>' . "\n";
       echo '<script src="' . plugins_url( 'dist/js/gmagic.min.js', __FILE__ ) . '"></script>' . "\n";
     }
   }
   
-  essentialGridV4Admin::instance();
+  gridMagicAdmin::instance();
 }

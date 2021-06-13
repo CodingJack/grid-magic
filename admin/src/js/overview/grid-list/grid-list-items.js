@@ -88,7 +88,7 @@ class GridListItems extends Component {
     const numPages = Math.ceil( gridLength / max );
     const pages = max !== -1 ? Array( numPages ).fill(0) : [0];
     
-    const { imgPath = '' } = essentialGridV4Data;
+    const { imgPath = '' } = gridMagicData;
     const gridCellClass = `${ namespace }-grid-list-cell`;
     const bg = { backgroundImage: `url("${ imgPath }gridlistbg.png")` };
     

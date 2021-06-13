@@ -24,9 +24,9 @@ const {
 
 /*
  * @desc the top-level Admin component
- * @since 4.0.0
+ * @since 0.1.0
 */
-class EssentialGridV4Admin extends Component {
+class GridMagicAdmin extends Component {
   constructor() {
     super( ...arguments );
   }
@@ -48,25 +48,24 @@ class EssentialGridV4Admin extends Component {
   }
 }
 
-if( typeof essentialGridV4Data !== 'undefined' ) {
+if( typeof gridMagicData !== 'undefined' ) {
+  console.log(gridMagicData)
   try {
-    essentialGridV4Data = JSON.parse( essentialGridV4Data );
+    gridMagicData = JSON.parse( gridMagicData );
   } catch( e ) {
-    essentialGridV4Data = null;
-    console.log( 'issue with parsing essentialGridV4Data' );
+    gridMagicData = null;
+    console.log( 'issue with parsing gridMagicData' );
   }
   
-  // console.log(essentialGridV4Data);
-  
-  if( essentialGridV4Data ) {
+  if( gridMagicData ) {
     const root = document.getElementById( 'gmagic-app' );
     
     if( root ) {
-      const { jsPath = '' } = essentialGridV4Data;
+      const { jsPath = '' } = gridMagicData;
       __webpack_public_path__ = jsPath;
       
       document.body.classList.add( `${ namespace }-preloader` );
-      ReactDOM.render( <EssentialGridV4Admin />, root );
+      ReactDOM.render( <GridMagicAdmin />, root );
     }
   }
 }

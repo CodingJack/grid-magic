@@ -24,7 +24,7 @@ import {
 
 /*
  * @desc a custom container with display options that gets lazyloaded
- * @since 4.0.0
+ * @since 0.1.0
 */
 
 const NotificationBox = ( {

@@ -34,7 +34,7 @@ const icons = {
 
 /*
  * @desc changelog is now an object, not HTML
- * @since 4.0.0
+ * @since 0.1.0
 */
 class Changelog extends Component {
   constructor() {

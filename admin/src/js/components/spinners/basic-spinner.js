@@ -13,7 +13,7 @@ import {
 
 /*
  * @desc small spinner for soft-updates
- * @since 4.0.0
+ * @since 0.1.0
 */
 const BasicSpinner = ( { namespace = '' } ) => <span className={ `${ namespace }-basic-spinner` }></span>;
 

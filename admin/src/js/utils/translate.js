@@ -5,7 +5,7 @@ const __ = ( path = '' ) => {
     return '';
   }
   if( ! lang ) {
-    const { translations } = essentialGridV4Data;
+    const { translations } = gridMagicData;
     if( translations ) {
       lang = { ...translations };
     }

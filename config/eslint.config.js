@@ -35,7 +35,7 @@ module.exports = {
       requireConfigFile: false,
     },
     globals: {
-      essentialGridV4Data: 'writable',
+      gridMagicData: 'writable',
       require: 'readonly',
       ReactDOM: 'readonly',
       __webpack_public_path__: 'writable',

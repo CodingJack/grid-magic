@@ -9,7 +9,7 @@ const {
 
 /*
  * @desc content for the purchase code registration benefits section
- * @since 4.0.0
+ * @since 0.1.0
 */
 const RegistrationBenefits = ( { namespace } ) => {
   return (

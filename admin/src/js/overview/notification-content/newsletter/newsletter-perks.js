@@ -10,7 +10,7 @@ import IconTitle from '../../../components/headers/icon-title';
 
 /*
  * @desc content for the newsletter subscribe section
- * @since 4.0.0
+ * @since 0.1.0
 */
 const NewsletterPerks = ( { namespace = '' } ) => {
   return (

@@ -5,12 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
-if ( ! class_exists( 'EssentialGridV4Changelog' ) ) {
+if ( ! class_exists( 'GridMagicChangelog' ) ) {
 
-  final class EssentialGridV4Changelog {
+  final class GridMagicChangelog {
     
     private static $instance = null;
-    // private $version = '4.0.0';
     
     public static function instance() {
       if ( is_null( self::$instance ) ) {
@@ -24,7 +23,7 @@ if ( ! class_exists( 'EssentialGridV4Changelog' ) ) {
     
     /*
      * @desc the latest and greatest
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function latestChanges() {
       return array(
@@ -60,7 +59,7 @@ if ( ! class_exists( 'EssentialGridV4Changelog' ) ) {
     
     /*
      * @desc return most recent changes
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function getShortChangelog() {
       return json_encode( array( 'data' => $this->latestChanges() ) );
@@ -68,7 +67,7 @@ if ( ! class_exists( 'EssentialGridV4Changelog' ) ) {
     
     /*
      * @desc return full changelog
-     * @since 4.0.0
+     * @since 0.1.0
     */
     public function getFullChangelog() {
       return json_encode( array( 'data' => array_merge( $this->latestChanges(), array(
@@ -103,5 +102,5 @@ if ( ! class_exists( 'EssentialGridV4Changelog' ) ) {
     }
   }
   
-  EssentialGridV4Changelog::instance();
+  GridMagicChangelog::instance();
 }

@@ -43,7 +43,7 @@ const buttons = [
 
 /*
  * @desc the action buttons for the grids in the overview's grid list
- * @since 4.0.0
+ * @since 0.1.0
 */
 const GridListBtns = ( { id = '' } ) => {
   const context = useContext( GridListContext );

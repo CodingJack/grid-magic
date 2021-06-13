@@ -15,7 +15,7 @@ const { Component } = React;
 
 /*
  * @desc react lazy loader
- * @since 4.0.0
+ * @since 0.1.0
 */
 class AppLoader extends Component {
   constructor() {
@@ -28,10 +28,10 @@ class AppLoader extends Component {
   
   /*
    * @desc query database
-   * @since 4.0.0
+   * @since 0.1.0
   */
   async getData() {
-    const { endpoint = '' } = essentialGridV4Data;
+    const { endpoint = '' } = gridMagicData;
     let response;
 
     try {
@@ -75,7 +75,7 @@ class AppLoader extends Component {
     if( response ) {
       const { data } = response;
       if( data ) {
-        essentialGridV4Data.translations = { overview: response.data };
+        gridMagicData.translations = { overview: response.data };
       } else {
         console.log( 'ajax error retrieving language' );
       }
@@ -88,7 +88,7 @@ class AppLoader extends Component {
   
   /*
    * @desc loads components 
-   * @since 4.0.0
+   * @since 0.1.0
   */
   async componentDidMount() {
     const { resolve, data: getData } = this.props;
@@ -96,7 +96,7 @@ class AppLoader extends Component {
     this.Module = Module;
     
     if( getData ) {
-      const { language } = essentialGridV4Data;
+      const { language } = gridMagicData;
       if( ! language || typeof language !== 'string' ) {
         this.getData();
       } else {

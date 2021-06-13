@@ -24,7 +24,7 @@ import {
 
 /*
  * @desc a button with options
- * @since 4.0.0
+ * @since 0.1.0
 */
 const Button = ( { 
   id = '',

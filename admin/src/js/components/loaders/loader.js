@@ -10,7 +10,7 @@ const {
 
 /*
  * @desc loads the additional .js chunks
- * @since 4.0.0
+ * @since 0.1.0
 */
 class Loader extends Component {
   constructor() {

@@ -35,7 +35,7 @@ const {
 
 /*
  * @desc an item in the overview's grid list
- * @since 4.0.0
+ * @since 0.1.0
 */
 class GridListItem extends Component {
   constructor() {

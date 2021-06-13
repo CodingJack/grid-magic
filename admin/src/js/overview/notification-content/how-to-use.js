@@ -14,7 +14,7 @@ const {
 
 /*
  * @desc content for the "how to use" section
- * @since 4.0.0
+ * @since 0.1.0
 */
 const HowToUse = () => {
   const txtPath = 'overview.how_to_use.';

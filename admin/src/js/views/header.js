@@ -19,10 +19,10 @@ import {
 
 /*
  * @desc the admin's main header
- * @since 4.0.0
+ * @since 0.1.0
 */
 const Header = ( { namespace = '', page = 'overview' } ) => {
-  const { imgPath = '', adminUrl = '' } = essentialGridV4Data;
+  const { imgPath = '', adminUrl = '' } = gridMagicData;
   
   return (
     <h2 className={ `${ namespace }-header` }>

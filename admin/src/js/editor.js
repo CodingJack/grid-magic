@@ -1,4 +1,4 @@
-require('../scss/editor.scss');
+require( '../scss/editor.scss' );
 
 /**
  * External dependencies.
@@ -29,13 +29,13 @@ import {
   dymanicObject,
 } from './utils';
 
-const { 
+const {
   Component,
 } = React;
 
 /*
  * @desc the main entry point for the editor
- * @since 4.0.0
+ * @since 0.1.0
 */
 class Editor extends Component {
   constructor() {
@@ -78,7 +78,6 @@ class Editor extends Component {
   }
 
   onChange = ( prop = '', val = '', path = '', def = '' ) => {
-    //console.log('changed');
     let masterData;
 
     this.setState( prevState => {
@@ -88,20 +87,11 @@ class Editor extends Component {
       const { curGridId = '', curGrid:prevGrid = {} } = prevState;
       masterData = cloneObj( prevData );
 
-      //const start = new Date().getTime();
-      //console.log('hello');
-      //console.log(start);
-
       dymanicObject( prevGrid, path, prop, val, def );
       const { gridList = {} } = masterData;
-
-      //console.log('end');
-      //console.log(new Date().getTime() - start);
-      //console.log('');
       
       gridList[ curGridId ] = cloneObj( prevGrid );
       masterData.gridList = { ...gridList };
-
     }, () => {
       const { adminContext } = this.props;
       const { updateData } = adminContext;

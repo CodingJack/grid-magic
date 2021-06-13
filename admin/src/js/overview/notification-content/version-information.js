@@ -20,11 +20,11 @@ const {
 
 /*
  * @desc content for the version info section
- * @since 4.0.0
+ * @since 0.1.0
 */
 const VersionInformation = () => {
   const context = useContext( AdminContext );
-  const { version = '4.0.0' } = essentialGridV4Data;
+  const { version = '0.1.0' } = gridMagicData;
   
   const {
     namespace = '',

@@ -19,7 +19,7 @@ const {
 
 /*
  * @desc an input text element that manages its own state and emmits its value to the callback
- * @since 4.0.0
+ * @since 0.1.0
 */
 
 class InputTextWithState extends Component {

@@ -26,7 +26,7 @@ const {
 
 /*
  * @desc the newsletter subscribe section
- * @since 4.0.0
+ * @since 0.1.0
 */
 const Newsletter = () => {
   const context = useContext( AdminContext );

@@ -19,7 +19,7 @@ let scrollbarSize;
 
 /*
  * @desc caches the browser's scrollbar width needed for calculations
- * @since 4.0.0
+ * @since 0.1.0
 */
 const getScrollbarSize = () => {
   const div = document.createElement( 'div' );
@@ -31,7 +31,7 @@ const getScrollbarSize = () => {
 
 /*
  * @returns "clientY" from pointerdown, touchstart or mousedown
- * @since 4.0.0
+ * @since 0.1.0
 */
 const getPoint = e => {
   return e.targetTouches ? e.targetTouches[0].clientY : e.clientY;
@@ -73,7 +73,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc user is scrolling the content with the mousehweel or touch
-   * @since 4.0.0
+   * @since 0.1.0
   */
   onScroll = e => {
     if ( e ) {
@@ -98,7 +98,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc async paint for non-blocking scroll
-   * @since 4.0.0
+   * @since 0.1.0
   */
   updateScrollHandle = () => {
     this.value = this.handleY;
@@ -107,7 +107,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc scrolls the content when the scrollbar track is clicked
-   * @since 4.0.0
+   * @since 0.1.0
   */
   onTrackClick = e => {
     if ( this.handleDown ) {
@@ -136,7 +136,7 @@ class Scrollable extends PureComponent {
   /*
    * @desc user is about to begin scrolling via the scrollbar
    * @param boolean fromTrack - if the function is triggered manually from the track click event
-   * @since 4.0.0
+   * @since 0.1.0
   */
   onHandleDown = ( e, fromTrack ) => {
     if ( e.touches && e.touches.length > 1 ) {
@@ -170,7 +170,7 @@ class Scrollable extends PureComponent {
   /*
    * @desc user is scrolling with the scrollbar handle, 
    *       updates handle position and content's scroll position
-   * @since 4.0.0
+   * @since 0.1.0
   */
   onHandleMove = e => {
     if ( ! this.handleDown ) {
@@ -197,7 +197,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc user has finished scrolling with the scrollbar handle
-   * @since 4.0.0
+   * @since 0.1.0
   */
   onHandleUp = e => {
     if ( e.touches && e.touches.length > 0 ) {
@@ -215,7 +215,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc async to prevent bubbling to the track click event
-   * @since 4.0.0
+   * @since 0.1.0
   */
   resetHandle = () => {
     this.handleDown = false;
@@ -223,7 +223,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc remove event listeners when scrolling is complete and on unmount
-   * @since 4.0.0
+   * @since 0.1.0
   */
   removeListeners( e ) {
     window.cancelAnimationFrame( this.requestUpdateScroll );
@@ -243,7 +243,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc sets the scrollbars background color to its hovered state
-   * @since 4.0.0
+   * @since 0.1.0
   */
   onMouseEnter = () => {
     this.hovered = true;
@@ -252,7 +252,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc resets the scrollbars background color to its static state
-   * @since 4.0.0
+   * @since 0.1.0
   */
   onMouseLeave = () => {
     this.hovered = false;
@@ -264,7 +264,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc add observers and reset the scrollTop in case it was cached by the browser
-   * @since 4.0.0
+   * @since 0.1.0
   */
   componentDidMount() {
     const contentRect = this.content.getBoundingClientRect();
@@ -290,7 +290,7 @@ class Scrollable extends PureComponent {
   
   /*
    * @desc clean up for the observers and objects attached to the class
-   * @since 4.0.0
+   * @since 0.1.0
   */
   componentWillUnmount() {
     this.removeListeners();

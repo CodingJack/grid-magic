@@ -21,7 +21,7 @@ const {
 
 /*
  * @desc the little notice that pops in from the top-right after a REST call ius complete
- * @since 4.0.0
+ * @since 0.1.0
 */
 class SoftUpdateNotice extends Component {
   constructor() {

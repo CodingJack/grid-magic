@@ -17,7 +17,7 @@ import {
 
 /*
  * @desc a "save favorite" icon button
- * @since 4.0.0
+ * @since 0.1.0
 */
 const FavIcon = ( { 
   onClick,

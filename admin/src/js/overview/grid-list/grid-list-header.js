@@ -34,7 +34,7 @@ const selectList = [
 
 /*
  * @desc the grid list header with its sorting options
- * @since 4.0.0
+ * @since 0.1.0
 */
 const GridListHeader = ( {
   gridLength = 0, 

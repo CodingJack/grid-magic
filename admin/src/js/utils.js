@@ -5,7 +5,7 @@ const merge = require( 'lodash.merge' );
 
 /*
  * @desc convert "a_prop" and "a-prop" to "aProp". caps arg would equal "AProp".
- * @since 4.0.0
+ * @since 0.1.0
 */
 const camelCase = ( st, caps ) => {
   const str = 
@@ -18,7 +18,7 @@ const camelCase = ( st, caps ) => {
 
 /*
  * @desc return string with first letter capitalized
- * @since 4.0.0
+ * @since 0.1.0
 */
 const capitalize = st => {
   return st && typeof st === 'string' ? 
@@ -28,7 +28,7 @@ const capitalize = st => {
 
 /*
  * @desc convert a name/title to a slug
- * @since 4.0.0
+ * @since 0.1.0
 */
 const toSlug = val => {
   return val && typeof val === 'string' ? 
@@ -38,7 +38,7 @@ const toSlug = val => {
 
 /*
  * @desc convert a name/title to a slug
- * @since 4.0.0
+ * @since 0.1.0
 */
 const toPropName = prop => {
   if( ! prop || typeof prop !== 'string' ) {
@@ -49,7 +49,7 @@ const toPropName = prop => {
 
 /*
  * @desc verify function
- * @since 4.0.0
+ * @since 0.1.0
 */
 const isFunction = func => {
   return {}.toString.call( func ) === '[object Function]';
@@ -101,7 +101,7 @@ const dymanicObject = ( obj, path, prop, value, defValue ) => {
 
 /*
  * @desc verify traditional object
- * @since 4.0.0
+ * @since 0.1.0
 */
 const isObject = obj => {
   return obj !== null && 
@@ -112,7 +112,7 @@ const isObject = obj => {
 
 /*
  * @desc handle possible string value for boolean
- * @since 4.0.0
+ * @since 0.1.0
 */
 const trueFalse = val => {
   return val === true || val === 'true' || val === 1 || val === '1';
@@ -120,7 +120,7 @@ const trueFalse = val => {
 
 /*
  * @desc find indexes of a query in an array
- * @since 4.0.0
+ * @since 0.1.0
 */
 const findMatches = ( arr = [], query = '' ) => {
   if( ! Array.isArray( arr ) || typeof query !== 'string' ) {
@@ -139,7 +139,7 @@ const findMatches = ( arr = [], query = '' ) => {
 
 /*
  * @desc generate a hard formatted timestamp
- * @since 4.0.0
+ * @since 0.1.0
 */
 const getTimeStamp = () => {
   const curDate = new Date( Date.now() );
@@ -154,7 +154,7 @@ const getTimeStamp = () => {
 
 /*
  * @desc convert a month - PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const toMonth = i => {
   let index = parseInt( i, 10 );
@@ -167,7 +167,7 @@ const toMonth = i => {
 
 /*
  * @desc convert a day - PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const toDay = i => {
   let index = parseInt( i, 10 );
@@ -180,7 +180,7 @@ const toDay = i => {
 
 /*
  * @desc convert a day to its short version - PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const toShortDay = i => {
   let index = parseInt( i, 10 );
@@ -196,7 +196,7 @@ const toShortDay = i => {
 
 /*
  * @desc hour prefix for readable date - PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const hourPrefix = time => {
   const hour = time === 0 ? 12 : time > 12 ? ( 24 - time ) : time;
@@ -205,7 +205,7 @@ const hourPrefix = time => {
 
 /*
  * @desc hour suffix for readable date - PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const hourSuffix = hour => {
   return hour < 13 ? 'AM' : 'PM';
@@ -213,7 +213,7 @@ const hourSuffix = hour => {
 
 /*
  * @desc hour suffix for readable date - PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const toFullMinutes = min => {
   return min < 10 ? min.toString().padStart( 1, '0' ) : min;
@@ -221,7 +221,7 @@ const toFullMinutes = min => {
 
 /*
  * @desc convert our hard formatted date into readable text
- * @since 4.0.0
+ * @since 0.1.0
 */
 const convertDate = theDate => {
   const date = String( theDate ).trim().split( ' ' );
@@ -239,7 +239,7 @@ const convertDate = theDate => {
 
 /*
  * @desc set a cookie
- * @since 4.0.0
+ * @since 0.1.0
 */
 const setCookie = ( prop, value ) => {
   document.cookie = `${ prop }=${ value }`;
@@ -247,7 +247,7 @@ const setCookie = ( prop, value ) => {
 
 /*
  * @desc get a cookie
- * @since 4.0.0
+ * @since 0.1.0
 */
 const getCookie = ( cookie, devValue ) => {
   let value = document.cookie;
@@ -266,7 +266,7 @@ const getCookie = ( cookie, devValue ) => {
 
 /*
  * @desc deep clone
- * @since 4.0.0
+ * @since 0.1.0
 */
 const cloneObj = obj => {
   return JSON.parse( JSON.stringify( obj ) );
@@ -274,7 +274,7 @@ const cloneObj = obj => {
 
 /*
  * @desc convert a wildcard string to number - PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const sanitizeString = ( str = '', replace = '', toNumber = false ) => {
   const st = String( str )
@@ -293,7 +293,7 @@ const sanitizeString = ( str = '', replace = '', toNumber = false ) => {
 
 /*
  * @desc sort in place by Boolean, args already sanitized, PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const sortByBooleans = ( ar, obj, prop ) => {
   ar.sort( ( keyA, keyB ) => {
@@ -307,7 +307,7 @@ const sortByBooleans = ( ar, obj, prop ) => {
 
 /*
  * @desc sort in place by Numbers, args already sanitized, PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const sortByNumbers = ( ar, obj, prop, replace ) => {
   ar.sort( ( keyA, keyB ) => {
@@ -328,7 +328,7 @@ const sortByNumbers = ( ar, obj, prop, replace ) => {
 
 /*
  * @desc sort in place by Strings, args already sanitized, PRIVATE
- * @since 4.0.0
+ * @since 0.1.0
 */
 const sortByStrings = ( ar, obj, prop ) => {
   ar.sort( ( keyA, keyB ) => {
@@ -342,7 +342,7 @@ const sortByStrings = ( ar, obj, prop ) => {
 
 /*
  * @desc sort objects by their keys or an arbitrary prop
- * @since 4.0.0
+ * @since 0.1.0
 */
 const sortObject = (
   prop = 'favorite', 

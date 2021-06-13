@@ -18,7 +18,7 @@ import {
 /*
  * @desc a tab button for the admin main menu
  * @todo convert the menu-admin-tab className to an option
- * @since 4.0.0
+ * @since 0.1.0
 */
 const Tab = ( {
   namespace = '',

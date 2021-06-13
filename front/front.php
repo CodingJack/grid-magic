@@ -5,12 +5,12 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
-if ( ! class_exists( 'EssentialGridV4Front' ) ) {
+if ( ! class_exists( 'GridMagicFront' ) ) {
   
-  final class EssentialGridV4Front {
+  final class GridMagicFront {
   
     private static $instance = null;
-    private $version = '4.0.0';
+    private $version = '0.1.0';
 
     public static function instance() {
       
@@ -38,7 +38,7 @@ if ( ! class_exists( 'EssentialGridV4Front' ) ) {
       
       wp_localize_script(
         'gmagic-js',
-        'essentialGridV4Data', 
+        'gridMagicData', 
         array()
       );
       
@@ -51,6 +51,6 @@ if ( ! class_exists( 'EssentialGridV4Front' ) ) {
     }
   }
   
-  EssentialGridV4Front::instance();
+  GridMagicFront::instance();
   
 }

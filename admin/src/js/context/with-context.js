@@ -5,7 +5,7 @@ import React from 'react';
 
 /*
  * @desc used by component classes that need to hook into multiple contexts
- * @since 4.0.0
+ * @since 0.1.0
 */
 
 import { 

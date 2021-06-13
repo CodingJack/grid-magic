@@ -24,7 +24,7 @@ const {
 
 /*
  * @desc the legend that describes the overview's grid list
- * @since 4.0.0
+ * @since 0.1.0
 */
 const GridListLegend = ( {
   sortIds = false,

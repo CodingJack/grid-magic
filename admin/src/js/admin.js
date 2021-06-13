@@ -68,7 +68,7 @@ const messagePath = 'overview.notices.';
 
 /*
  * @desc the main admin class that handles all the views and REST calls
- * @since 4.0.0
+ * @since 0.1.0
 */
 class Admin extends Component {
   constructor() {
@@ -104,7 +104,7 @@ class Admin extends Component {
       getCookie( `${ cookiePrefix }_max_grids`, 25 ), 
     10 );
     
-    const { gridId = '', section = 'settings' } = essentialGridV4Data;
+    const { gridId = '', section = 'settings' } = gridMagicData;
     const page = gridId ? 'editor' : 'overview';
     const { gridList: allGrids } = masterData;
     
@@ -148,7 +148,7 @@ class Admin extends Component {
      * @desc the AdminContext Provider = the state
      *       PUBLIC class methods are the ones we push into the state here so child 
              components that adopt the context can call them
-     * @since 4.0.0
+     * @since 0.1.0
     */
     this.state = { 
       max,
@@ -187,7 +187,7 @@ class Admin extends Component {
    * @desc make sure drafts aren't posted 
    * @param object data - incoming data to remove the draft from
    * @param string draftId - the draft to remove
-   * @since 4.0.0
+   * @since 0.1.0
   */
   pluckDrafts( data = {}, draftId = '' ) {
     const newData = cloneObj( data );
@@ -201,7 +201,7 @@ class Admin extends Component {
    * @class-property - PRIVATE
    * @desc user prompt if REST calls are still in route
    * @param object e - window beforeunload event object
-   * @since 4.0.0
+   * @since 0.1.0
   */
   onUnload = e => {
     e.preventDefault();
@@ -215,11 +215,11 @@ class Admin extends Component {
    * @desc NON-blocking async/await REST call
    * @param object data - incoming data to update
    * @param string route - optional custom route
-   * @since 4.0.0
+   * @since 0.1.0
   */
   async softPostData( incomingData = {}, route = 'opt', callback, draftId = '' ) {
     const data = route === 'opt' && draftId ? this.pluckDrafts( incomingData, draftId ) : incomingData;
-    const { endpoint = '' } = essentialGridV4Data;
+    const { endpoint = '' } = gridMagicData;
     let res;
     
     window.addEventListener( 'beforeunload', this.onUnload );
@@ -263,11 +263,11 @@ class Admin extends Component {
    * @class-property - PRIVATE
    * @desc BLOCKING REST call for things where we want the user to wait, such as a purchase code registration action
    * @param object data - new master data object to send to the server
-   * @since 4.0.0
+   * @since 0.1.0
   */
   async hardPostData( incomingData = {}, route = 'opt', draftId = '' ) {
     const data = route === 'opt' && draftId ? this.pluckDrafts( incomingData, draftId ) : incomingData;
-    const { endpoint = '' } = essentialGridV4Data;
+    const { endpoint = '' } = gridMagicData;
     const newData = { ...data };
     let res;
     
@@ -299,10 +299,10 @@ class Admin extends Component {
    * @desc get bulk content on-demand from a php file or from the TP servers such as the changelog, etc.
    * @param string route - required route name
    * @param function callback - callback to fire once content is retrieved
-   * @since 4.0.0
+   * @since 0.1.0
   */
   async loadContent( route, callback ) {
-    const { endpoint = '' } = essentialGridV4Data;
+    const { endpoint = '' } = gridMagicData;
     let res;
     
     window.addEventListener( 'beforeunload', this.onUnload );
@@ -326,7 +326,7 @@ class Admin extends Component {
    * @class-property - PUBLIC
    * @desc set the state here from a child component
    * @param object newData - incoming data to update
-   * @since 4.0.0
+   * @since 0.1.0
   */
   updateAdmin = ( newData = {}, callback ) => {
     this.setState( { ...newData }, callback );
@@ -337,7 +337,7 @@ class Admin extends Component {
    * @desc check if we should go into overview list pagination mode
    * @param object params - just max for now
    * @param func callback - used to set a cookie afterward (for now)
-   * @since 4.0.0
+   * @since 0.1.0
   */
   checkPagination = ( { max = 25 }, callback ) => {
     this.setState( prevState => {
@@ -361,7 +361,7 @@ class Admin extends Component {
    * @desc spread data and to the server with a NON-blocking REST call
    * @param object newData - incoming data to update
    * @param string route - optional custom route
-   * @since 4.0.0
+   * @since 0.1.0
   */
   softUpdate = ( newData = {}, route = 'opt', callback, draftId = '', internal ) => {
     if( ! internal ) {
@@ -378,7 +378,7 @@ class Admin extends Component {
    * @desc get bulk content on-demand from a php file or from the TP servers such as the changelog, etc.
    * @param string route - route name that descripts the REST action
    * @param function callback - callback to fire once content is retrieved
-   * @since 4.0.0
+   * @since 0.1.0
   */
   getContent = ( route = 'opt', callback ) => {
     if( ! callback ) {
@@ -394,7 +394,7 @@ class Admin extends Component {
    * @desc REST call for things where we want the user to wait, such as a purchase code registration action
    * @param object incomingData - new master data object to send to the server
    * @param string message - message to show the user while they wait
-   * @since 4.0.0
+   * @since 0.1.0
   */
   updateData = ( incomingData = {}, message = '', hardUpdate = false ) => {
     let saving = message;
@@ -429,7 +429,7 @@ class Admin extends Component {
    * @class-property - PRIVATE
    * @desc create a new Grid
    * @param function callback - possible callback, must be null otherwise
-   * @since 4.0.0
+   * @since 0.1.0
   */
   newGrid( callback ) {
     let data;
@@ -468,7 +468,7 @@ class Admin extends Component {
    * @param action string - the action to handle
    * @param gridId string - the Grid's ID
    * @param data * - the Grid's ID
-   * @since 4.0.0
+   * @since 0.1.0
   */
   gridAction = ( { action, gridId = '', data, callback } ) => {
     // no default for the switch.  
@@ -514,7 +514,7 @@ class Admin extends Component {
    * @class-property - PRIVATE
    * @desc bulk delete the grids
    * @param grids array - the grids to bulk delete
-   * @since 4.0.0
+   * @since 0.1.0
   */
   deleteBulkGrids( grids = [], callback ) {
     if( window.confirm( __( `${ messagePath }sure_you_want_to_delete_these_grids` ) ) ) {
@@ -543,7 +543,7 @@ class Admin extends Component {
    * @desc switches between the main 3 pages, currently: 'overview', 'editor' and 'globals'
    * @param prevState object - grabbed from the setState function and then used here to create a new Grid
    * @param draft boolean - whether the new grid is a draft or not
-   * @since 4.0.0
+   * @since 0.1.0
   */
   createNewGrid( prevState = {}, draft, draftId = '' ) {
     const { masterData = {} } = prevState;
@@ -612,7 +612,7 @@ class Admin extends Component {
    * @class-property - PUBLIC
    * @desc switches between the main 3 pages, currently: 'overview', 'editor' and 'globals'
    * @param string page - the new page to change to
-   * @since 4.0.0
+   * @since 0.1.0
   */
   changePage = ( newPage = '', params = {} ) => {
     const page = String( newPage );
@@ -660,7 +660,7 @@ class Admin extends Component {
    * @class-property - PRIVATE
    * @desc duplicates a grid from the overview page on user-action
    * @param string gridId - the ID of the Grid to duplicate
-   * @since 4.0.0
+   * @since 0.1.0
   */
   duplicateGrid( gridId = '' ) {
     this.setState( prevState => {
@@ -757,7 +757,7 @@ class Admin extends Component {
    * @class-property - PRIVATE
    * @desc deletes a grid from the overview page on user-action
    * @param string gridId - the ID of the Grid to delete
-   * @since 4.0.0
+   * @since 0.1.0
   */
   deleteGrid( gridId = '' ) {
     if( window.confirm( __( `${ messagePath }sure_you_want_to_delete_grid` ) ) ) {
@@ -786,7 +786,7 @@ class Admin extends Component {
   /*
    * @class-property - PRIVATE
    * @desc sorts grids depending on user action
-   * @since 4.0.0
+   * @since 0.1.0
   */
   sortGrids( prop = '', propSelected = '', cookieSlug = '', type = 'boolean' ) {
     let isSorted;
@@ -847,7 +847,7 @@ class Admin extends Component {
    * @desc toggles Grid favorites from the grid-list on the overview page 
    * @param string gridId - the ID of the Grid to delete
    * @param boolean selected - whether the favorite is selected or not
-   * @since 4.0.0
+   * @since 0.1.0
   */
   updateFavorite( gridId = '', selected ) {
     this.setState( prevState => {
@@ -875,7 +875,7 @@ class Admin extends Component {
    * @desc the rendered view. Here we pass the current class state down to any component that adopts the AdminContext
    *       then the ErrorBoundary catches errors that bubble up so we can show custom messages
    *       then the Display component is basically the admin's main wrapper, i.e. header, menu, body content
-   * @since 4.0.0
+   * @since 0.1.0
   */
   render() {
     return (
