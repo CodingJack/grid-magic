@@ -88,14 +88,13 @@ const dynamicObject = ( obj, path, prop, value, defValue ) => {
     } else {
       delete deep[ prop ];
       if( isObject( point ) ) {
-        console.log(point);
         delete point[ prop ];
       }
     }
   }
   const merged = Object.assign( {}, obj, crawler );
   const a = merge( obj, merged );
-  console.log(a);
+
   return a;
 }
 
