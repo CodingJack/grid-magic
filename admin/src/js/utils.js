@@ -62,7 +62,7 @@ const isFunction = func => {
  * it can be blank or it can have any structure.
  * this guarantees the smallest data possible to store in the database
  * because if the value matches the defualt, it doesn't get stored (or it gets deleted)
- * and the structure doesn't matter because if it doesn't exist it gets dynamically created based on the path
+ * and the structure doesn't matter because if it doesn't exist, it gets dynamically created based on the path
  * @since 0.1.0
 */
 const dynamicObject = ( obj, path, prop, value, defValue ) => {
