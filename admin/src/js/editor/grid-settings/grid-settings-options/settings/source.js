@@ -10,7 +10,7 @@ import RadioGroup from '../../../../components/inputs/radio-group';
 import SourceOptions from './source/source-options';
 /*
 import {
-  dymanicObject,
+  dynamicObject,
 } from '../../../../utils';
 */
 const sources = {
@@ -54,7 +54,7 @@ const Source = ( {
   //const { options:prevOptions = {} } = prevSource;
   //const { type:val = 'custom' } = prevOptions;
   /*
-  dymanicObject( 
+  dynamicObject( 
     values, 
     'source.options', 
     'type', 

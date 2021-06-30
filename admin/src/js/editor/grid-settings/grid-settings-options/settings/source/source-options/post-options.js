@@ -9,7 +9,7 @@
 import RadioGroup from '../../../../../../components/inputs/radio-group';
 
 import {
-  dymanicObject,
+  dynamicObject,
 } from '../../../../../../utils';
 
 const postTypes = [
@@ -25,7 +25,7 @@ const PostOptions = ( {
 } ) => {
   //console.log({...values});
   //console.log(path);
-  dymanicObject( values, path, 'type', values, 'posts' );
+  dynamicObject( values, path, 'type', values, 'posts' );
 
   //console.log({...values});
 

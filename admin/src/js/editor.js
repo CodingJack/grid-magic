@@ -26,7 +26,7 @@ import {
   cloneObj,
   getCookie,
   setCookie,
-  dymanicObject,
+  dynamicObject,
 } from './utils';
 
 const {
@@ -87,7 +87,7 @@ class Editor extends Component {
       const { curGridId = '', curGrid:prevGrid = {} } = prevState;
       masterData = cloneObj( prevData );
 
-      dymanicObject( prevGrid, path, prop, val, def );
+      dynamicObject( prevGrid, path, prop, val, def );
       const { gridList = {} } = masterData;
       
       gridList[ curGridId ] = cloneObj( prevGrid );

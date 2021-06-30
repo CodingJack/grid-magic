@@ -55,7 +55,7 @@ const isFunction = func => {
   return {}.toString.call( func ) === '[object Function]';
 };
 
-const dymanicObject = ( obj, path, prop, value, defValue ) => {
+const dynamicObject = ( obj, path, prop, value, defValue ) => {
   const paths = path.split( '.' );
   let scrubber = cloneObj( obj );
   let crawler = cloneObj( obj );
@@ -393,5 +393,5 @@ export {
   getTimeStamp,
   sortObject,
   toPropName,
-  dymanicObject,
+  dynamicObject,
 };
