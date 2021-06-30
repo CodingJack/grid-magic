@@ -93,9 +93,7 @@ const dynamicObject = ( obj, path, prop, value, defValue ) => {
     }
   }
   const merged = Object.assign( {}, obj, crawler );
-  const a = merge( obj, merged );
-
-  return a;
+  return merge( obj, merged );
 }
 
 /*
