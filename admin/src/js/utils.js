@@ -55,6 +55,10 @@ const isFunction = func => {
   return {}.toString.call( func ) === '[object Function]';
 };
 
+/*
+ * @desc YEAH 💪
+ * @since 0.1.0
+*/
 const dynamicObject = ( obj, path, prop, value, defValue ) => {
   const paths = path.split( '.' );
   let scrubber = cloneObj( obj );
