@@ -94,7 +94,7 @@ if ( ! class_exists( 'GridMagicAdmin' ) ) {
      * @since 0.1.0
     */
     public function on_init() {
-      if( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] === 'gmagic' ) {
+      if( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] === 'grid-magic' ) {
         $this->isEsgAdmin = true;
         
         remove_all_actions( 'wp_loaded' );
