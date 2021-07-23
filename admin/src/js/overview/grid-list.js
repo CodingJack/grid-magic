@@ -142,7 +142,6 @@ class GridList extends Component {
 
   newGridCallback = () => {
     if( ! this.unmounted ) {
-      console.log('fucker');
       this.setState( { clearSearch: false }, () => {
         this.afterSearchUpdate( '' );
       } );

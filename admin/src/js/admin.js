@@ -139,7 +139,6 @@ class Admin extends Component {
     }
     
     masterData.gridList = gridList;
-    // console.log( { ...masterData } );
     
     const gridLength = Object.keys( gridList ).length;
     const pagination = gridLength > max && max !== -1;

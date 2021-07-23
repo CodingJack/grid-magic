@@ -49,7 +49,6 @@ class GridMagicAdmin extends Component {
 }
 
 if( typeof gridMagicData !== 'undefined' ) {
-  console.log(gridMagicData)
   try {
     gridMagicData = JSON.parse( gridMagicData );
   } catch( e ) {

@@ -65,8 +65,6 @@ const Source = ( {
   const { source = {} } = values;
   const { options = {} } = source;
   const { type = 'custom' } = options;
-  //console.log({...values});
-  //console.log(type);
 
   return (
     <>

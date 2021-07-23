@@ -101,6 +101,7 @@ class GridListItems extends Component {
               return null;
             }
             const { alias = String( Math.random() * 10000 ) } = gridItm;
+
             return (
               <GridListItem
                 key={ `${ gridCellClass }-${ alias }-${ i }` } 

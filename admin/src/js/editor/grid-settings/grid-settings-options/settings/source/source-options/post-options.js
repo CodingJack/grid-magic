@@ -23,17 +23,8 @@ const PostOptions = ( {
   path = '',
   onChange,
 } ) => {
-  //console.log({...values});
-  //console.log(path);
   dynamicObject( values, path, 'type', values, 'posts' );
-
-  //console.log({...values});
-
   const { type = 'posts' } = values;
-
-  //console.log('the type = ');
-  //console.log(type);
-  //console.log('');
 
   return (
     <div className={ `${ namespace }-options` }>
