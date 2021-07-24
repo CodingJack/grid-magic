@@ -52,11 +52,9 @@ class InputTextWithState extends Component {
 
   onBlur = () => {
     this.setState( prevState => {
-      const { value } = prevState;
-      if( value ) {
-        const { onChange } = this.props;
-        onChange( value );
-      }
+      const { value = '' } = prevState;
+      const { onChange } = this.props;
+      onChange( value );
       return null;
     } );
   };

@@ -87,6 +87,7 @@ const GridListHeader = ( {
           clearSearch={ clearSearch }
           initialValue={ initialValue }
           onChange={ value => searchGrids( value ) }
+          updateOnChange={ true }
         />
         { gridTotal > 5 && (
           <Select

@@ -20,6 +20,7 @@ import {
   bool,
   string,
   shape,
+  object,
   oneOfType,
   funcRequired,
   stringRequired,
@@ -193,7 +194,7 @@ GridListItem.propTypes = {
     settings: string,
     lastModified: string,
     favorite: oneOfType( [ bool, string ] ),
-    source: string,
+    source: object,
   } ).isRequired,
 };
 

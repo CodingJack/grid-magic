@@ -119,6 +119,9 @@ class GridList extends Component {
     if( callback ) {
       obj.clearSearch = true;
     }
+
+    console.log('the search text = ' + searchText);
+
     this.setState( obj, () => {
       if( ! callback ) {
         const { gridLength = 0 } = this.state;

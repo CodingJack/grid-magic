@@ -66,6 +66,10 @@ const Source = ( {
   const { options = {} } = source;
   const { type = 'custom' } = options;
 
+  console.log(values);
+  console.log(source);
+  console.log(type);
+
   return (
     <>
       <RadioGroup 
