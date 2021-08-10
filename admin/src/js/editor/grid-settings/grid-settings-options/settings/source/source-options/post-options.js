@@ -8,10 +8,6 @@
  */
 import RadioGroup from '../../../../../../components/inputs/radio-group';
 
-import {
-  dynamicObject,
-} from '../../../../../../utils';
-
 const postTypes = [
   { label: 'Posts', slug: 'posts' },
   { label: 'Pages', slug: 'pages' },
@@ -23,8 +19,8 @@ const PostOptions = ( {
   path = '',
   onChange,
 } ) => {
-  dynamicObject( values, path, 'type', values, 'posts' );
-  const { type = 'posts' } = values;
+  const { post = {} } = values;
+  const { type = 'posts' } = post;
 
   return (
     <div className={ `${ namespace }-options` }>
@@ -32,7 +28,7 @@ const PostOptions = ( {
         namespace={ namespace }
         items={ postTypes } 
         prop="type"
-        defValue="posts"
+        defValue={ type }
         path={ path }
         value={ type }
         onChange={ onChange } 

@@ -35,14 +35,20 @@ const editorMenu = {
   layout: {
     naming: { icon: 'title' },
     source: { icon: 'source' },
+    skin: { icon: 'style' },
+    loading: { icon: 'loading' },
   },
   nav: {
     naming: { icon: 'title' },
     source: { icon: 'source' },
+    skin: { icon: 'style' },
+    loading: { icon: 'loading' },
   },
   layers: {
     naming: { icon: 'title' },
     source: { icon: 'source' },
+    skin: { icon: 'style' },
+    loading: { icon: 'loading' },
   },
 };
 

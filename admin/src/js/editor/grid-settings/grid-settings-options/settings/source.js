@@ -8,11 +8,7 @@ import React from 'react';
  */
 import RadioGroup from '../../../../components/inputs/radio-group';
 import SourceOptions from './source/source-options';
-/*
-import {
-  dynamicObject,
-} from '../../../../utils';
-*/
+
 const sources = {
   custom: { 
     label: 'Custom', 
@@ -50,25 +46,9 @@ const Source = ( {
   values = {},
   onChange,
 } ) => {
-  //const { source:prevSource = {} } = values;
-  //const { options:prevOptions = {} } = prevSource;
-  //const { type:val = 'custom' } = prevOptions;
-  /*
-  dynamicObject( 
-    values, 
-    'source.options', 
-    'type', 
-    val, 
-    'custom',
-  );
-  */
   const { source = {} } = values;
   const { options = {} } = source;
   const { type = 'custom' } = options;
-
-  console.log(values);
-  console.log(source);
-  console.log(type);
 
   return (
     <>
@@ -77,7 +57,7 @@ const Source = ( {
         items={ sourceMenu } 
         prop="type"
         path="source.options"
-        defValue="custom"
+        defValue={ type }
         value={ type }
         onChange={ onChange } 
         spaceEvenly={ true }

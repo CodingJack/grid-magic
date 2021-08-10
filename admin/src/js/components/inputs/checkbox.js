@@ -16,10 +16,11 @@ const CheckBox = ( {
   namespace = '', 
   id = '', 
   label = '', 
+  value = '',
   extraClass = '',
   group = '',
   radio = false,
-  checked = false,
+  checked = null,
   onChange,
 } ) => {
   let className = `${ namespace }-checkbox`;
@@ -35,8 +36,11 @@ const CheckBox = ( {
         id={ `${ namespace }-checkbox-${ id }` }
         type={ type }
         name={ name }
+        value={ value }
         checked={ checked }
-        onChange={ () => onChange( ! checked, id ) }
+        onChange={ () => {
+          onChange( ! checked, id );
+        } }
       />
     </span>
   );

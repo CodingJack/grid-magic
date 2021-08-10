@@ -51,6 +51,7 @@ const RadioGroup = ( {
             label={ label }
             group={ path } 
             radio={ true } 
+            value={ value }
             checked={ slug === value } 
             onChange={ checked => onSelect( checked, slug ) } 
           />
