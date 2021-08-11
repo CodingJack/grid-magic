@@ -56,7 +56,8 @@ const PageListing = ( {
                 const options = Array.from( current.options )
                   .filter( option => option.selected )
                   .map( option => option.value );
-                onChange( slug, options, `source.options` );
+                  
+                onChange( slug, options, 'source.options' );
               }
             } }
             value={ value }
