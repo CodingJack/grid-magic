@@ -191,15 +191,6 @@ if ( ! class_exists( 'GridMagicAdmin' ) ) {
       $changelog = new GridMagicChangelog();
       return $changelog->getShortChangelog();
     }
-
-    /*
-     * @desc return partial changelog
-     * @since 0.1.0
-    */
-    public function get_posts() {
-      $changelog = new GridMagicChangelog();
-      return $changelog->getShortChangelog();
-    }
     
     /*
      * @desc return full changelog
