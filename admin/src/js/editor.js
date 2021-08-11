@@ -73,6 +73,7 @@ class Editor extends Component {
       curGrid: {},
       error: false,
       menuSlug: 'naming',
+      onChange: this.onChange,
       updateSubMenu: this.updateSubMenu,
     };
   }

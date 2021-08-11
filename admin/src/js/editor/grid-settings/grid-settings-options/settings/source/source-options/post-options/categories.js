@@ -26,9 +26,7 @@ class Categories extends Component {
     data: false,
   };
   display = () => {
-    const {
-      namespace = '',
-    } = this.context;
+    const { namespace = '' } = this.context;
     this.setState( { data: () => (
       <PostCats 
         namespace={ namespace } 
