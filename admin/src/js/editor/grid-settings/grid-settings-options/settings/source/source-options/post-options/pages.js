@@ -10,15 +10,14 @@ const {
 /**
  * Internal dependencies.
  */
-import PostCats from './post-cats';
+import PageListing from './page-listing';
 import {
   AdminContext,
 } from '../../../../../../../context';
 
-let theCategories;
-let theTags;
+let thePages;
 
-class Categories extends Component {
+class Pages extends Component {
   constructor() {
     super( ...arguments );
   }
@@ -28,26 +27,24 @@ class Categories extends Component {
   display = () => {
     const { namespace = '' } = this.context;
     this.setState( { data: () => (
-      <PostCats 
+      <PageListing 
         namespace={ namespace } 
-        theCategories={ theCategories }
-        theTags={ theTags }
+        thePages={ thePages }
       />
     ) } );
   };
-  onFetched = ( cats = [], tags = [] ) => {
-    theCategories = [ ...cats ];
-    theTags = [ ...tags ];
+  onFetched = ( pages = [] ) => {
+    thePages = [ ...pages ];
     if( ! this.unmounted ) {
       this.display();
     }
   };
   componentDidMount() {
-    if( ! theCategories ) {
+    if( ! thePages ) {
       const {
-        getCategories,
+        getPages,
       } = this.context;
-      getCategories( this.onFetched );
+      getPages( this.onFetched );
     } else {
       this.display();
     }
@@ -68,6 +65,6 @@ class Categories extends Component {
     return <Data />;
   }
 }
-Categories.contextType = AdminContext;
+Pages.contextType = AdminContext;
 
-export default Categories;
+export default Pages;

@@ -178,6 +178,7 @@ class Admin extends Component {
       updateAdmin: this.updateAdmin,
       checkPagination: this.checkPagination,
       getCategories: this.getCategories,
+      getPages: this.getPages,
       masterData: {...masterData },
     };
   }
@@ -372,6 +373,24 @@ class Admin extends Component {
     this.setState( { restInRoute: true }, () => {
       this.fetchCategories( checkCallback, 'categories' );
       this.fetchCategories( checkCallback, 'tags' );
+    } );
+  };
+  
+  /*
+   * @class-property - PUBLIC
+   * @desc - fecthes psges asynchrounously and silently 
+   * @param function callback - callback to fire once content is retrieved
+   * @since 0.1.0
+   * @todo - lift this data up?
+  */
+  getPages = callback => {
+    if( ! callback ) {
+      return;
+    }
+    this.setState( { restInRoute: true }, () => {
+      this.fetchCategories( ( data = [] ) => {
+        callback( [ ...data ] );
+      }, 'pages' );
     } );
   };
   

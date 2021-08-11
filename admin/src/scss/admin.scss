@@ -104,6 +104,13 @@
 
 .#{$namespace}-basic-spinner {
   @include basic-spinner;
+  &-wrap {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+    padding: 20px 0;
+  }
 }
 
 @keyframes gmagic-spin {

@@ -8,6 +8,7 @@
  */
 import RadioGroup from '../../../../../../components/inputs/radio-group';
 import Categories from './post-options/categories';
+import Pages from './post-options/pages';
 
 const postTypes = [
   { label: 'Posts', slug: 'posts' },
@@ -39,7 +40,7 @@ const PostOptions = ( {
         <Categories />
       ) }
       { type === 'pages' && (
-        <div>pages baby</div>
+        <Pages />
       ) }
     </div>
   );
