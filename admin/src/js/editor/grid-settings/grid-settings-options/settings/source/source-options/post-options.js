@@ -20,7 +20,9 @@ const PostOptions = ( {
   path = '',
   onChange,
 } ) => {
-  const { post = {} } = values;
+  const { source = {} } = values;
+  const { options = {} } = source;
+  const { post = {} } = options;
   const { type = 'posts' } = post;
 
   return (
@@ -29,7 +31,6 @@ const PostOptions = ( {
         namespace={ namespace }
         items={ postTypes } 
         prop="type"
-        defValue={ type }
         path={ path }
         value={ type }
         onChange={ onChange } 

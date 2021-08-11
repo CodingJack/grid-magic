@@ -57,7 +57,6 @@ const Source = ( {
         items={ sourceMenu } 
         prop="type"
         path="source.options"
-        defValue={ type }
         value={ type }
         onChange={ onChange } 
         spaceEvenly={ true }

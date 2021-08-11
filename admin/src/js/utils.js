@@ -1,7 +1,7 @@
 /**
  * External dependencies.
  */
-const merge = require( 'lodash.merge' );
+//const merge = require( 'lodash.merge' );
 
 /*
  * @desc convert "a_prop" and "a-prop" to "aProp". caps arg would equal "AProp".
@@ -56,55 +56,19 @@ const isFunction = func => {
 };
 
 /*
- * @desc YEAH 💪
- * we read/write here.  
- * doesn't matter what the object is.  
- * it can be blank or it can have any structure.
- * this guarantees the smallest data possible to store in the database
- * because if the value matches the defualt, it doesn't get stored (or it gets deleted)
- * and the structure doesn't matter because if it doesn't exist, it gets dynamically created based on the path
+ * @desc manage master object
  * @since 0.1.0
 */
-const dynamicObject = ( obj, path, prop, value, defValue ) => {
-  const paths = path.split( '.' );
-  let scrubber = cloneObj( obj );
-  let crawler = cloneObj( obj );
-  let point;
-  let deep;
-  let pushed;
-
-  paths.reduce( ( itm, val ) => {
-    if( itm[ val ] ) {
-      deep = itm[ val ];
-      crawler[ val ] = deep;
-      if( ! point ) {
-        point = obj;
-      }
-      return itm[ val ];
-    } else {
-      scrubber[ val ] = {};
-      scrubber = scrubber[ val ];
-      if( ! pushed ) {
-        crawler[ val ] = scrubber;
-        pushed = true;
-      }
-      deep = scrubber;
-      return itm;
+const dynamicObject = ( obj, path, prop, value ) => {
+  let scrub = obj;
+  path.split( '.' ).forEach( path => {
+    if( ! isObject( scrub[ path ] ) ) {
+      scrub[ path ] = {};
     }
-  }, scrubber );
-  if( deep ) {
-    if( value !== defValue ) {
-      deep[ prop ] = value;
-    } else {
-      delete deep[ prop ];
-      if( isObject( point ) ) {
-        delete point[ prop ];
-      }
-    }
-  }
-  const merged = Object.assign( {}, obj, crawler );
-  return merge( obj, merged );
-}
+    scrub = scrub[ path ];
+  });
+  scrub[ prop ] = value;
+};
 
 /*
  * @desc verify traditional object

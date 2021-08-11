@@ -78,7 +78,7 @@ class Editor extends Component {
     };
   }
 
-  onChange = ( prop = '', val = '', path = '', def = '' ) => {
+  onChange = ( prop = '', val = '', path = '' ) => {
     let masterData;
 
     this.setState( prevState => {
@@ -88,7 +88,7 @@ class Editor extends Component {
       const { curGridId = '', curGrid:prevGrid = {} } = prevState;
       masterData = cloneObj( prevData );
 
-      dynamicObject( prevGrid, path, prop, val, def );
+      dynamicObject( prevGrid, path, prop, val );
       const { gridList = {} } = masterData;
       
       gridList[ curGridId ] = cloneObj( prevGrid );

@@ -28,7 +28,6 @@ const PostCats = ( {
     categories = [],
     tags = [],
   } = options;
-
   const items = [
     {
       name: 'Categories',
@@ -62,12 +61,11 @@ const PostCats = ( {
             onChange={ () => {
               const { current } = ref;
               if ( current ) {
-                onChange( 
-                  slug, 
-                  Array.from( current.options ).filter( option => option.selected ).map( option => option.value ),
-                  `source.options.${ slug }`, 
-                  [],
-                );
+                const options = Array.from( current.options )
+                  .filter( option => option.selected )
+                  .map( option => option.value );
+                  
+                onChange( slug, options, `source.options` );
               }
             } }
             value={ value }

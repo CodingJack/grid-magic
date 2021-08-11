@@ -21,14 +21,13 @@ const RadioGroup = ( {
   path = '',
   items = [],
   value = '',
-  defValue = '',
   extraClass = '',
   spaceEvenly = false,
   onChange,
 } ) => {
   const onSelect = ( checked, val ) => {
     if( checked ) {
-      onChange( prop, val, path, defValue );
+      onChange( prop, val, path );
     }
   };
   const spaceBetween = ! spaceEvenly ? ` ${ namespace }-flex-start` : ` ${ namespace }-flex-space-between`;
@@ -66,7 +65,6 @@ RadioGroup.propTypes = {
   prop: stringRequired,
   value: stringRequired,
   path: string,
-  defValue: string,
   namespace: string,
   extraClass: string,
   items: array,
