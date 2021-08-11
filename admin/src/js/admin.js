@@ -343,6 +343,13 @@ class Admin extends Component {
     }
   }
 
+   /*
+   * @class-property - PUBLIC
+   * @desc - fecthes categories and tags together asynchrounously and silently 
+   * @param function callback - callback to fire once content is retrieved
+   * @since 0.1.0
+   * @todo - list this data up
+  */
   getCategories = callback => {
     if( ! callback ) {
       return;
