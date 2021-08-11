@@ -7,6 +7,7 @@
  * Intenal dependencies.
  */
 import RadioGroup from '../../../../../../components/inputs/radio-group';
+import Categories from './post-options/categories';
 
 const postTypes = [
   { label: 'Posts', slug: 'posts' },
@@ -33,6 +34,12 @@ const PostOptions = ( {
         value={ type }
         onChange={ onChange } 
       />
+      { type === 'posts' && (
+        <Categories />
+      ) }
+      { type === 'pages' && (
+        <div>pages baby</div>
+      ) }
     </div>
   );
 };

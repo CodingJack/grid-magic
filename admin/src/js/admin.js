@@ -177,6 +177,7 @@ class Admin extends Component {
       gridAction: this.gridAction,
       updateAdmin: this.updateAdmin,
       checkPagination: this.checkPagination,
+      getCategories: this.getCategories,
       masterData: {...masterData },
     };
   }
@@ -320,6 +321,52 @@ class Admin extends Component {
       console.log( e );
     }
   }
+
+  async fetchCategories( callback, route ) {
+    const { restapiurl = '' } = gridMagicData;
+    let res;
+    
+    window.addEventListener( 'beforeunload', this.onUnload );
+    try {
+      res = await axios.get( `${ restapiurl }${ route }/` );
+    } catch( e ) {
+      res = {};
+      console.log( e );
+    }
+    window.removeEventListener( 'beforeunload', this.onUnload );
+    
+    const { data: response = '' } = res;
+    try {
+      callback( response, route );
+    } catch( e ) {
+      console.log( e );
+    }
+  }
+
+  getCategories = callback => {
+    if( ! callback ) {
+      return;
+    }
+    let cats;
+    let tags;
+    const checkCallback = ( data = [], route = '' ) => {
+      switch( route ) {
+        case 'categories':
+          cats = [ ...data ];
+          break;
+        case 'tags':
+          tags = [ ...data ];
+          break;
+      }
+      if( cats && tags ) {
+        callback( cats, tags );
+      }
+    };
+    this.setState( { restInRoute: true }, () => {
+      this.fetchCategories( checkCallback, 'categories' );
+      this.fetchCategories( checkCallback, 'tags' );
+    } );
+  };
   
   /*
    * @class-property - PUBLIC

@@ -191,6 +191,15 @@ if ( ! class_exists( 'GridMagicAdmin' ) ) {
       $changelog = new GridMagicChangelog();
       return $changelog->getShortChangelog();
     }
+
+    /*
+     * @desc return partial changelog
+     * @since 0.1.0
+    */
+    public function get_posts() {
+      $changelog = new GridMagicChangelog();
+      return $changelog->getShortChangelog();
+    }
     
     /*
      * @desc return full changelog
@@ -314,6 +323,7 @@ if ( ! class_exists( 'GridMagicAdmin' ) ) {
         'jsPath' => plugins_url( 'dist/js/', __FILE__ ),
         'imgPath' => plugins_url( 'dist/img/', __FILE__ ),
         'endpoint' => get_home_url() . '/wp-json/gmagic/v1/',
+        'restapiurl' => get_home_url() . '/wp-json/wp/v2/',
         'language' => plugins_url( 'language/page/', __FILE__ ) . $lang . '.json' // "page" is replaced dynamically with "overview", "editor" or "globals"
       );
       
