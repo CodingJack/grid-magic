@@ -50,29 +50,26 @@
       transition: transform 0.3s ease-out;
       z-index: 99;
     }
-    span {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      opacity: 0;
-      visibility: hidden;
-      background-repeat: no-repeat;
-      background-size: cover;
-      transition: all 0.3s ease-out;
-    }
+    span,
     &:after {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      transition: all 0.3s ease-out;
+    }
+    span {
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &:after {
       content: "";
       background: $aqua;
       z-index: 98;
-      transition: all 0.3s ease-out;
     }
     &:hover {
       span {
