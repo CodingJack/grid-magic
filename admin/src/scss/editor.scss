@@ -35,6 +35,59 @@
   &-options {
     margin-top: 10px;
   }
+  &-additem {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    line-height: 0;
+    border-radius: 4px;
+    svg {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease-out;
+      z-index: 99;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: all 0.3s ease-out;
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: $aqua;
+      z-index: 98;
+      transition: all 0.3s ease-out;
+    }
+    &:hover {
+      span {
+        opacity: 0.75;
+        visibility: visible;
+      }
+      svg {
+        transform: rotate(-180deg) scale(1.25);
+      }
+      &:after {
+        opacity: 0.5;
+        filter: hue-rotate(45deg);
+      }
+    }
+  }
 }
 
 ##{$namespace}-app {

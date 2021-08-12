@@ -7,6 +7,13 @@ import React from 'react';
  * Intenal dependencies.
  */
 import PostOptions from './source-options/post-options';
+import Icon from '../../../../../components/icons/icon';
+const { 
+  imgPath = '',
+} = gridMagicData;
+const style = {
+  backgroundImage: `url(${ imgPath }lion.jpg)`,
+};
 
 const SourceOptions = ( { 
   namespace = '', 
@@ -18,7 +25,17 @@ const SourceOptions = ( {
   return (
     <>
       { type === 'custom' && (
-        <div>custom</div>
+        <a 
+          className={ `${ namespace }-additem` }
+          href="#"
+          onClick={ e => {
+            e.stopPropagation();
+            e.preventDefault();
+          }}
+        >
+          <span style={ style }></span>
+          <Icon name="checked" color="white" />
+        </a>
       ) }
       { type === 'post' && (
         <PostOptions 
