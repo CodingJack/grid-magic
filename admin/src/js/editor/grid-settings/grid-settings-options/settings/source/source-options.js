@@ -31,6 +31,7 @@ const SourceOptions = ( {
           onClick={ e => {
             e.stopPropagation();
             e.preventDefault();
+            // do something
           }}
         >
           <span style={ style }></span>
