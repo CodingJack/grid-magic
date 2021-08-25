@@ -43,7 +43,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.2",
-    "core-js": "^3.16.1",
+    "core-js": "^3.16.3",
     "css-loader": "^6.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
@@ -57,13 +57,13 @@
     "npm-run-all": "^4.1.5",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^17.0.2",
-    "sass": "^1.37.5",
+    "sass": "^1.38.1",
     "sass-loader": "^12.1.0",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.2.1",
     "terser-webpack-plugin": "^5.1.4",
-    "webpack": "^5.49.0",
-    "webpack-cli": "^4.7.2"
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
   },
   "scripts": {
     "watch:admin": "webpack --watch ./admin/src/js/index.js --output-path ./admin/dist/js --config ./config/webpack.config.js --mode=development",
