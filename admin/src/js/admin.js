@@ -24,6 +24,7 @@ import qs from 'qs';
  */
 import ErrorBoundary from './error';
 import Display from './views/display';
+import Queries from './queries';
 import __ from './utils/translate';
 
 import {
@@ -355,25 +356,35 @@ class Admin extends Component {
     if( ! callback ) {
       return;
     }
-    let cats;
-    let tags;
-    const checkCallback = ( data = [], route = '' ) => {
-      switch( route ) {
-        case 'categories':
-          cats = [ ...data ];
-          break;
-        case 'tags':
-          tags = [ ...data ];
-          break;
-      }
-      if( cats && tags ) {
-        callback( cats, tags );
-      }
-    };
     this.setState( { restInRoute: true }, () => {
-      this.fetchCategories( checkCallback, 'categories' );
-      this.fetchCategories( checkCallback, 'tags' );
-    } );
+      const { catTags = '' } = Queries;
+      window.addEventListener( 'beforeunload', this.onUnload );
+      fetch( 'http://localhost:3001/graphql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: catTags
+        }),
+      })
+      .then( res => res.json() )
+      .then( res => {
+        const { data = {} } = res;
+        const { categories = {}, tags = {} } = data;
+        const { nodes:catNodes = [] } = categories;
+        const { nodes:tagNodes = [] } = tags;
+        this.setState( { restInRoute: false }, () => {
+          try {
+            callback( catNodes, tagNodes );
+          } catch( e ) {
+            console.log( e );
+          } finally {
+            window.removeEventListener( 'beforeunload', this.onUnload );
+          }
+        } );
+      });
+    });
   };
   
   /*
@@ -388,10 +399,33 @@ class Admin extends Component {
       return;
     }
     this.setState( { restInRoute: true }, () => {
-      this.fetchCategories( ( data = [] ) => {
-        callback( [ ...data ] );
-      }, 'pages' );
-    } );
+      const { pages = '' } = Queries;
+      window.addEventListener( 'beforeunload', this.onUnload );
+      fetch( 'http://localhost:3001/graphql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: pages
+        }),
+      })
+      .then( res => res.json() )
+      .then( res => {
+        const { data = {} } = res;
+        const { pages = {} } = data;
+        const { nodes = [] } = pages;
+        this.setState( { restInRoute: false }, () => {
+          try {
+            callback( nodes );
+          } catch( e ) {
+            console.log( e );
+          } finally {
+            window.removeEventListener( 'beforeunload', this.onUnload );
+          }
+        } );
+      });
+    });
   };
   
   /*

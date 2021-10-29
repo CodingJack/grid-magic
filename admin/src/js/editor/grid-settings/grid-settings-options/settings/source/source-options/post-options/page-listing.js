@@ -66,20 +66,19 @@ const PageListing = ( {
           { 
             data.map( ( obj = {}, i ) => {
               const { 
-                title = {},
+                title = '',
                 slug = '',
                 status = 'publish',
-                id = '',
+                pageId = '',
               } = obj;
               if( status !== 'publish' ) {
                 return null;
               }
-              const { rendered = '' } = title;
               return (
                 <option 
                   key={ `${ namespace }-${ slug }-${ i }` }
                   value={ slug }
-                >{ `${ rendered } [${ id }]` }</option>
+                >{ `${ title } [${ pageId }]` }</option>
               );
             } ) 
           }
