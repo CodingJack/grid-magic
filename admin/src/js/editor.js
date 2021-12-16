@@ -10,6 +10,7 @@ import React from 'react';
  */
 import ErrorBoundary from './error';
 import GridMenu from './editor/grid-menu';
+import GridPreview from './editor/grid-preview';
 import GridSettings from './editor/grid-settings';
 import GridSettingsSubMenu from './editor/grid-settings/grid-settings-submenu';
 import options from './editor/grid-settings/grid-settings-options/options';
@@ -87,10 +88,9 @@ class Editor extends Component {
 
       const { curGridId = '', curGrid:prevGrid = {} } = prevState;
       masterData = cloneObj( prevData );
-
       dynamicObject( prevGrid, path, prop, val );
+
       const { gridList = {} } = masterData;
-      
       gridList[ curGridId ] = cloneObj( prevGrid );
       masterData.gridList = { ...gridList };
     }, () => {
@@ -223,6 +223,9 @@ class Editor extends Component {
                   onChange={ this.onChange } 
                 />
               </div>
+            </div>
+            <div className={ `${ namespace }-panel-right` }>
+              <GridPreview />
             </div>
           </div>
         </ErrorBoundary>

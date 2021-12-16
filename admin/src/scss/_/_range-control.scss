@@ -1,0 +1,15 @@
+// range-control.scss
+
+@import "variables";
+
+.#{$namespace}-range-control {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  label {
+    margin-right: 10px;
+  }
+  input[type="text"] {
+    width: 35px !important;
+  }
+}

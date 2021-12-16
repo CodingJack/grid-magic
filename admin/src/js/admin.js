@@ -1,16 +1,3 @@
-/*
-
-********************************
-*********  TO DO ***************
-********************************
-
-- editor menu (data object)
-- setup deepProp system with auto-generating objects when they don't exist
-- need to add protections for text-input component alias collisions
-- finish translations
-
-*/
-
 /**
  * External dependencies.
  */
@@ -324,27 +311,6 @@ class Admin extends Component {
     }
   }
 
-  async fetchCategories( callback, route ) {
-    const { restapiurl = '' } = gridMagicData;
-    let res;
-    
-    window.addEventListener( 'beforeunload', this.onUnload );
-    try {
-      res = await axios.get( `${ restapiurl }${ route }/` );
-    } catch( e ) {
-      res = {};
-      console.log( e );
-    }
-    window.removeEventListener( 'beforeunload', this.onUnload );
-    
-    const { data: response = '' } = res;
-    try {
-      callback( response, route );
-    } catch( e ) {
-      console.log( e );
-    }
-  }
-
    /*
    * @class-property - PUBLIC
    * @desc - fecthes categories and tags together asynchrounously and silently 
@@ -359,7 +325,7 @@ class Admin extends Component {
     this.setState( { restInRoute: true }, () => {
       const { catTags = '' } = Queries;
       window.addEventListener( 'beforeunload', this.onUnload );
-      fetch( 'http://localhost:3001/graphql', {
+      fetch( '/graphql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -401,7 +367,7 @@ class Admin extends Component {
     this.setState( { restInRoute: true }, () => {
       const { pages = '' } = Queries;
       window.addEventListener( 'beforeunload', this.onUnload );
-      fetch( 'http://localhost:3001/graphql', {
+      fetch( '/graphql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,6 +1,8 @@
+@import "_/breakpoints";
 @import "_/variables";
 @import "_/dropdown";
 @import "_/colors";
+@import "_/range-control";
 
 .#{$namespace} {
   &-editor {
@@ -9,6 +11,19 @@
   &-panel {
     &-left {
       width: 320px;
+    }
+    &-right {
+      width: calc(100% - 350px);
+      margin-left: 30px;
+    }
+    &-left,
+    &-right {
+      float: left;
+      @include notebook {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
     }
   }
   &-grid-settings {
@@ -83,6 +98,19 @@
         opacity: 0.5;
         filter: hue-rotate(45deg);
       }
+    }
+  }
+  &-grid-preview {
+    &-controls {
+      margin-bottom: 20px;
+    }
+    &-cols-rows {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+    }
+    &-item {
+      background: green;
     }
   }
 }

@@ -1,4 +1,8 @@
 browser-sync start --server 'app' --files 'app'
 sudo npm i browser-sync -g
 
+browser-sync start --proxy 'me.local' --files '/Users/jasonmcelwaine/Local Sites/me/app/public/wp-content/plugins/video-magic'
+
+/Users/jasonmcelwaine/Local Sites/me/app/hellcat-huncho
+
 browser-sync start --proxy 'me.local' --files '/Users/jasonmcelwaine/Local Sites/me/app/public/wp-content/plugins/grid-magic'
